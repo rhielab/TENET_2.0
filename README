@@ -1,0 +1,278 @@
+TENET (Tracing Enhancer Networks using Epigenetic Traits)
+
+1.TENET Installation
+
+- TENET depends on the following programs
+1. bedtools (please install from https://github.com/arq5x/bedtools2/releases)
+2. R package, ELMER
+ELMER can be installed using bioconductor by typing below in R
+source("http://bioconductor.org/biocLite.R")
+biocLite("ELMER")
+
+- Download the TENET program (http://farnhamlab.com/software) and unzip by typing below  
+tar -xvzf TENET.tar.gz
+
+- Put matched sampleIDs methylation and gene expression data 
+You can either put txt files in ./external.data/data/methylation and ./external.data/data/expression (add case and ctrl in the file name, respectively) or put a rda file in ./external.data/data (for case, name as "metDataT", "expDataT", for ctrl, name as "metDataN", "expDataN")
+
+- fill out parameter settings in settings.txt 
+
+- run TENET by typing bash ./TENET.sh
+
+(OPTIONAL 1) put other cells methylation data you want to use for purity adjustment
+you can put a txt file in ./external.data/othercells or put a rda file in ./external.data/others (name as "extData")
+see the example othercells data in http://farnhamlab.com/software
+
+(OPTIONAL 2) if you have external datasets for enhancer peaks (bedfile), add files in ./external.data/enhancer
+see the example bed file in http://farnhamlab.com/software
+
+(OPTIONAL 3) if you have external datasets for NDR peaks (bedfile), add files in ./external.data/NDR
+see the example bed file in http://farnhamlab.com/software
+
+(OPTIONAL 4) if you have external datasets for other peaks (bed file), add files in ./external.data/feature
+see the example bed file in http://farnhamlab.com/software
+
+(OPTIONAL 5) if you have Purity, CNV, SM datasets for sample samples, add files in ./external.data/otherinfo (include "CNV", "SM", "Purity" in the file names)
+see the example CNV file in http://farnhamlab.com/software
+
+see the example SM file in http://farnhamlab.com/software
+
+see the example Purity file in http://farnhamlab.com/software
+
+(OPTIONAL 6) if you have a particular gene or probe you want to plot using the scatterplot ftn or circosplot ftn, put the list (include "gene", "probe" in the file names, and start with pairs you want to look (e.g. "hypo.G+.gene.txt", "hyper.G-.probe.txt")), in ./external.data/otherinfo
+
+see the example hypo.G+.gene.txt file in http://farnhamlab.com/software
+
+see the example hypo.G-.probe.txt file in http://farnhamlab.com/software
+
+2. Parameters
+
+prefix
+	prefix for output files 
+
+cores
+	number of cores you want to use in your machine
+
+step0
+	T: process data into a rda file when you put a txt file for methylation and expression data (when you put other cells methylation data in a txt file) 
+	F: when you put a rda file for methylation and expression data
+
+step1
+	T: find differentially methylated enhancer regions
+	F: do not run step1
+
+step2
+	T: select enhancer-gene links by calculating Z scores
+	F: do not run step2
+
+step3
+	T: select significant enhancer-gene link from step2 by permutation
+	F: do not run step3
+
+step4
+	T: optimize selection of enhancer-gene lnks
+	F: do not run step4
+
+step5
+	T: summarize and visualize enhancer-gene links
+	F: do not run step5
+
+methcutoff
+	determine a methylation cutoff of beta-values, range from 0 to 1
+
+hypocutoff
+	determine a hypomethylation cutoff of beta-values, range from 0 to 1
+
+unmethcutoff
+	determine a unmethylation cutoff of beta-values, range from 0 to 1
+
+hypercutoff
+	determine a hypermethylation cutoff of beta-values, range from 0 to 1
+
+minTumors
+	number of tumors with epigenetic events 
+
+leuk
+	T: use leukocytes methylation data to adjust purity
+	F: don't use
+
+fibro
+	T: use fibroblasts methylation data to adjust purity
+	F: don't use
+
+sm
+	T: use smooth muscles methylation data to adjust purity
+	F: don't use
+
+othercells
+	T: use other cells methylation data which you loaded in ./external.data/othercells to adjust purity
+	F: don't use
+
+purityinfo
+	T: use purity estimates which you loaded in ./external.data/otherinfo to make complex scatterplots
+	F: don't use purityinfo
+
+udist
+	upstream distance for enhancer from transcription start site
+
+ddist
+	downstream distance for enhancer from transcription start site
+
+elmerENH
+	T: use enhancer locations from ELMER R package (T when you want to use ELMER enhancers and external enhancer datasets)
+	F: don't use enhancer locations from ELMER R package
+
+encodeNDR
+	T: use ENCODE nucleosome depleted regions (obtained from ENCODE Master DNaseI-seq peaks from 125 tissues or cell lines)
+	F: don't use ENCODE Master DNaseI-seq peaks
+
+extENH
+	T: use external enhancer datasets you loaded in ./external.data/enhancer
+	F: don't use external enhancer datasets
+
+extNDR
+	T: use external nucleosome depleted regions you loaded in ./external.data/NDR
+	F: don't use external NDR datasets
+
+onlyextFeature
+	T: use only external datasets for other peaks you loaded in ./external.data/feature
+	F: don't use external datasets for other peaks
+
+SMdataset
+        T: use somatic mutation datasets purity which you loaded in ./external.data/otherinfo to make complex scatterplots
+	F: don't use SMdataset
+
+CNVdataset
+	T: use copy number variation datasets purity which you loaded in ./external.data/otherinfo to make complex scatterplots
+	F: don't use CNVdataset 
+
+usecaseonly
+	T: use methylation and gene expression data only from cases to select enhancer-gene lnks in step2
+	F: use methylation and gene expression data from cases and controls to select enhancer-gene links in step2
+
+findhypo
+	T: find hypomethylated enhancer-gene links in step2
+	F: don't find hypomethylated enhancer-gene links in step2
+
+hypo.strigency
+	determine a minimum beta-value of hypomethylated tumors, range from 0 to 1
+
+findhypoGpos
+	T: find hypomethylated enhancer to positively linked gene throughout steps
+	F: don't find findhypoGpos
+
+findhypoGneg
+	T: find hypomethylated enhancer to negatively linked gene throughout steps
+	F: don't find findhypoGneg
+
+findhyper
+	T: find hypermethylated enhancer-gene links in step2
+	F: don't find hypermethylated enhancer-gene links in step2
+
+hyper.stringency
+	determine a maximum beta-value of hypomethylated tumors, range from 0 to 1
+
+findhyperGpos
+	T: find hypermethylated enhancer to positvely linked gene throughout steps
+	F: don't find findhyperGpos
+
+findhyperGneg
+	T: find hypermethylated enhancer to negatively linked gene throughout steps
+	F: don't find findhyperGneg
+
+Zcutoff
+	determine a p-value cutoff for Z score calculation in step2, range from 0 to 1
+
+permutation.cutoff
+	determine an empirical p-value cutoff from permutation tests in step3, range from 0 to 1
+
+adj.pval.cutoff
+	determine an adjusted p-value cutoff from Wilcoson rank sum tests in step4, range from 0 to 1
+
+hypoGposHistogram
+	T: make histograms and tables for hypomethylated enhancer to genes positively linked, hypoGpos
+	F: don't generate histograms and tables for hypoGpos
+
+hypoGnegHistogram
+	T: make histograms and tables for hypomethylated enhancer to genes negatively linked, hypoGneg
+	F: don't generate histograms and tables for hypoGneg
+
+hyperGposHistogram
+	T: make histograms and tables for hypermethylated enhancer to genes positively linked, hyperGpos
+	F: don't generate histograms and tables for hyperGpos
+
+hyperGnegHistogram
+	T: make histograms and tables for hypermethylated enhancer to genes negatively linked, hyperGneg
+	F: don't generate histograms and tables for hyperGneg
+
+histcol
+	determine the color of histograms you generate (e.g. for red, histcol=c("red"), for blue, histcol=c("blue"))
+
+hypoGposScatter
+	T: make simple scatterplots for hypomethylated enhancer to genes positively linked, hypoGpos
+	F: don't generate simple scatterplots for hypoGpos
+
+hypoGnegScatter
+	T: make simple scatterplots for hypomethylated enhancer to genes negatively linked, hypoGneg
+	F: don't generate simple scatterplots for hypoGneg
+
+hyperGposScatter
+	T: make simple scatterplots for hypermethylated enhancer to genes positively linked, hyperGpos
+	F: don't generate simple scatterplots for hyperGpos
+
+hyperGnegScatter
+	T: make simple scatterplots for hypermethylated enhancer to genes negatively linked, hyperGneg
+	F: don't generate simple scatterplots for hyperGneg
+
+hypoGposTracks
+	T: make genome browser tracks for hypomethylated enhancer to genes positively linked, hypoGpos
+	F: don't generate genome browser tracks for hypoGpos
+
+hypoGnegStates
+	T: make genome browser tracks for hypomethylated enhancer to genes negatively linked, hypoGneg
+	F: don't generate genome browser tracks for hypoGneg
+
+hyperGposStates
+	T: make genome browser tracks for hypermethylated enhancer to genes positively linked, hyperGpos
+	F: don't generate genome browser tracks for hyperGpos
+
+hyperGnegStates
+	T: make genome browser tracks for hypermethylated enhancer to genes negatively linked, hyperGneg
+	F: don't generate genome browser tracks for hyperGneg
+
+hypoGposCScatter
+	T: make complex scatterplots for hypomethylated enhancer to genes positively linked, hypoGpos using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
+	F: don't generate complex scatterplots for hypoGpos
+
+hypoGnegCScatter
+	T: make complex scatterplots for hypomethylated enhancer to genes negatively linked, hypoGneg using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
+	F: don't generate complex scatterplots for hypoGneg
+
+hyperGposCScatter
+	T: make complex scatterplots for hypermethylated enhancer to genes positively linked, hyperGpos using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
+	F: don't generate complex scatterplots for hyperGpos
+
+hyperGnegCScatter
+	T: make complex scatterplots for hypermethylated enhancer to genes negatively linked, hyperGneg using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
+	F: don't generate complex scatterplots for hyperGneg
+
+makeScatter4gene
+	T: make simple scatterplots for the gene you selected in ./external.data/otherinfo - please make sure you put the list of genes with the correct file names (e.g. for hypomethylated enhancer to genes positively linked, "hypo.G+.gene.txt", for hypermethylated enhancer to genes negatively lnked, "hyper.G-.gene.txt")
+	F: don't generate simple scatterplots for the gene you selected in ./external.data/otherinfo
+
+makeScatter4gene
+	T: make simple scatterplots for the enhancer probe you selected in ./external.data/otherinfo - please make sure you put the list of probes with the correct file names (e.g. for hypomethylated enhancer to probes positively linked, "hypo.G+.probe.txt", for hypermethylated enhancer to probes negatively lnked, "hyper.G-.probe.txt")
+	F: don't generate simple scatterplots for the probe you selected in ./external.data/otherinfo
+
+makeCircos4gene
+	T: make circosplots for the gene you selected in ./external.data/otherinfo - please make sure you put the list of genes with the correct file names (e.g. for hypomethylated enhancer to genes positively linked, "hypo.G+.gene.txt", for hypermethylated enhancer to genes negatively lnked, "hyper.G-.gene.txt")
+	F: don't generate circos plots for the gene you selected in ./external.data/otherinfo
+
+makeCircos4probe
+	T: make circosplots for the enhancer probe you selected in ./external.data/otherinfo - please make sure you put the list of probes with the correct file names (e.g. for hypomethylated enhancer to probes positively linked, "hypo.G+.probe.txt", for hypermethylated enhancer to probes negatively lnked, "hyper.G-.probe.txt")
+	F: don't generate circos plots for the probe you selected in ./external.data/otherinfo
+
+circos.col
+	determine the color of links for circosplot you generate (e.g. for red, circos.col=c("red"), for blue, circos.col=c("blue"))
+
+*If you would like to run TENET newly with different settings, we recommend you to move output folders from the previous run (e.g. ./step3/ ./step4/) somewhere else or rename them in order to avoid bringing wrong files in a new run.

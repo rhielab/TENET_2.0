@@ -1,0 +1,116 @@
+### parameters to define ###
+prefix=c("luad")
+cores=40
+
+## steps ##
+step0=F
+step1=T
+step2=T
+step3=T
+step4=T
+step5=T
+
+## diffmeth parameter ##
+methcutoff=0.7
+hypocutoff=0.6
+unmethcutoff=0.3
+hypercutoff=0.4
+minTumor=5
+
+## purity parameter ##
+leuk=F
+fibro=F
+sm=F
+othercells=F
+purityinfo=F
+
+## TSS distance for enhancer ##
+udist=1500
+ddist=1500
+
+## enhancer dataset ##
+elmerENH=T
+encodeNDR=T
+
+## external dataset (OPTIONAL) ##
+extENH=T
+extNDR=T
+onlyextFeature=F
+SMdataset=F
+CNVdataset=F
+
+## method to find links ##
+usecaseonly=T
+
+# hypometh:G links
+findhypo=T
+hypo.stringency=0.4
+
+findhypoGpos=T
+findhypoGneg=T
+
+# hypermeth:G links 
+findhyper=T
+hyper.stringency=0.6
+
+findhyperGpos=T
+findhyperGneg=T
+
+# pvalue cutoffs 
+Zcutoff=0.05
+permutation.cutoff=0.05
+adj.pval.cutoff=0.05
+
+## step5 all at once functions ##
+
+# table and histogram 
+hypoGposHistogram=T
+hypoGnegHistogram=T
+hyperGposHistogram=T
+hyperGnegHistogram=T
+histcol=c("red")
+
+# simple scatterplot
+hypoGposScatter=F
+hypoGnegScatter=F
+hyperGposScatter=F
+hyperGnegScatter=F
+
+# genome browser track
+hypoGposTracks=F
+hypoGnegTracks=F
+hyperGposTracks=F
+hyperGnegTracks=F
+
+# enhancer probe:gene links state
+hypoGposStates=F
+hypoGnegStates=F
+hyperGposStates=F
+hyperGnegStates=F
+
+# complex scatterplot
+hypoGposCScatter=F
+hypoGnegCScatter=F
+hyperGposCScatter=F
+hyperGnegCScatter=F
+
+## step5 specific dataset functions ##
+makeScatter4gene=F
+makeScatter4probe=F
+makeCircos4gene=F
+makeCircos4probe=F
+circos.col=c("red")
+
+# survival *NEW*
+hypoGposSurvival=T
+hypoGnegSurvival=F
+hyperGposSurvival=F
+hyperGnegSurvival=F
+
+survival_top_n_genes=5
+high_thresh=0.75
+low_thresh=0.25
+
+
+###### don't touch from here #######
+save.image("settings.rda")
