@@ -44,10 +44,10 @@ fi
 if [[ $step1 == "T" ]];
 then
 mkdir step1
-mdkir './scripts/step1/hm450overlap'
-mdkir './scripts/step1/hm450overlap/enhancer'
-mdkir './scripts/step1/hm450overlap/NDR'
-mdkir './scripts/step1/hm450overlap/feature'
+mkdir './scripts/step1/hm450overlap'
+mkdir './scripts/step1/hm450overlap/enhancer'
+mkdir './scripts/step1/hm450overlap/NDR'
+mkdir './scripts/step1/hm450overlap/feature'
 cd ./step1
 echo "step1 started"
 extENH=$(head -n 36 ../settings.txt | tail -n 1)
