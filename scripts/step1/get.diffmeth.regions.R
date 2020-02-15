@@ -144,7 +144,7 @@ allenh=unique(c(as.character(external.enhancer$V1),as.character(DistalP)))
 nonTSS2=intersect(nonTSS, allenh)
 if (encodeNDR==T){
   # let's get probes overlapped with NDR
-  NDR=read.delim("../scripts/data/wgEncodeAwgDnaseMasterSites.hg19.hm450cg_GEO_GR.bed.probelist.txt", header=T)
+  NDR=read.delim("../scripts/data/wgEncodeAwgDnaseMasterSites.hg38.hm450cg_GEO_GR.bed.probelist.txt", header=T)
 }
 if (encodeNDR==F){
   NDR=data.frame(V1=c(NA))
@@ -165,7 +165,7 @@ if (onlyextFeature==T){
 ##### let's obtain methylation and expression data #####
 LS=list.files("../external.data/data", pattern="rda")
 load(paste("../external.data/data/", LS[1], sep=""))
-annoGenes=read.delim("../scripts/data/gene.anno.hg19.txpt.bed", header=T)
+annoGenes=read.delim("../scripts/data/gene.anno.hg38.txpt.bed", header=T)
 expDataT=expDataT[match(as.character(annoGenes$geneID), as.character(rownames(expDataT))),]
 rownames(expDataT)=as.character(annoGenes$geneID)
 expDataN=expDataN[match(as.character(annoGenes$geneID), as.character(rownames(expDataN))),]
