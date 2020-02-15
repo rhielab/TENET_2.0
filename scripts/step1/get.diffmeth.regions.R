@@ -71,7 +71,7 @@ gencode_v22_TSS_df <- data.frame(
   ),
   stringsAsFactors = FALSE
 )
-rownames(gencode_v22_TSS_df) <- make.unique(gencode_v22_TSS_only_df$name)
+rownames(gencode_v22_TSS_df) <- make.unique(gencode_v22_TSS_df$name)
 
 ## Create a granges object from the TSS dataframe:
 gencode_v22_TSS_granges <- makeGRangesFromDataFrame(
