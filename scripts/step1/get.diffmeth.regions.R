@@ -185,9 +185,15 @@ Enhprobe=intersect(nonTSS.NDR, names(useInd2))
 metDataT=RmetDataT[match(Enhprobe, rownames(RmetDataT)),]
 metDataN=RmetDataN[match(Enhprobe, rownames(RmetDataN)),]
 ### let's load leukocyte, fibroblast, smoothmuscle data ##
-load("../scripts/data/othercells/leukocytes.rda")
-load("../scripts/data/othercells/fibroblast.rda")
-load("../scripts/data/othercells/smoothmuscle.rda")
+if (leuk==T){
+  load("../scripts/data/othercells/leukocytes.rda")
+}
+if (fibro==T){
+  load("../scripts/data/othercells/fibroblast.rda")
+}
+if(sm==T){
+  load("../scripts/data/othercells/smoothmuscle.rda")
+}
 metDataL=leukData[match(Enhprobe, rownames(leukData)),]
 metDataF=fibroData[match(Enhprobe, rownames(fibroData)),]
 metDataS=smData[match(Enhprobe, rownames(smData)),]
