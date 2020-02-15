@@ -185,24 +185,28 @@ Enhprobe=intersect(nonTSS.NDR, names(useInd2))
 metDataT=RmetDataT[match(Enhprobe, rownames(RmetDataT)),]
 metDataN=RmetDataN[match(Enhprobe, rownames(RmetDataN)),]
 ### let's load leukocyte, fibroblast, smoothmuscle data ##
+Probe=data.frame(probe=Enhprobe)
+Probe$mean.normal=apply(metDataN, 1, mean, na.rm=T)
+Probe$mean.tumor=apply(metDataT, 1, mean, na.rm=T)
+
 if (leuk==T){
   load("../scripts/data/othercells/leukocytes.rda")
+  
+  metDataL=leukData[match(Enhprobe, rownames(leukData)),]
+  Probe$mean.leuk=apply(metDataL, 1, mean, na.rm=T)
 }
 if (fibro==T){
   load("../scripts/data/othercells/fibroblast.rda")
+  
+  metDataF=fibroData[match(Enhprobe, rownames(fibroData)),]
+  Probe$mean.fibro=apply(metDataF, 1, mean, na.rm=T)
 }
 if(sm==T){
   load("../scripts/data/othercells/smoothmuscle.rda")
+  
+  metDataS=smData[match(Enhprobe, rownames(smData)),]
+  Probe$mean.sm=apply(metDataS, 1, mean, na.rm=T)
 }
-metDataL=leukData[match(Enhprobe, rownames(leukData)),]
-metDataF=fibroData[match(Enhprobe, rownames(fibroData)),]
-metDataS=smData[match(Enhprobe, rownames(smData)),]
-Probe=data.frame(probe=Enhprobe)
-Probe$mean.leuk=apply(metDataL, 1, mean, na.rm=T)
-Probe$mean.fibro=apply(metDataF, 1, mean, na.rm=T)
-Probe$mean.sm=apply(metDataS, 1, mean, na.rm=T)
-Probe$mean.normal=apply(metDataN, 1, mean, na.rm=T)
-Probe$mean.tumor=apply(metDataT, 1, mean, na.rm=T)
 if (othercells==T){
   LA=list.files("../external.data/othercells/", pattern="rda")
   load(paste("../external.data/othercells/", LA[1], sep=""))
