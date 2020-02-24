@@ -1145,9 +1145,14 @@ for(gene in top_gene_names){
     mc.cores= cores
   )
   
+  ## Create a vector of the CpG p-values and add the CpG entries
+  ## as names
+  CpGs_linked_p_values_vector <- unlist(CpGs_linked_p_values)
+  names(CpGs_linked_p_values_vector) <- CpGs_linked
+  
   ## Get the CpGs that are nominally significant:
-  CpGs_linked_p_values_nominally_significant <- CpGs_linked_p_values[
-    CpGs_linked_p_values<0.05
+  CpGs_linked_p_values_nominally_significant <- CpGs_linked_p_values_vector[
+    CpGs_linked_p_values_vector<0.05
   ]
   
   ## Order the nominally significant CpGs:
