@@ -1,9 +1,6 @@
 ## Load settings information from .rda file:
 load("../settings.rda")
 
-## Load rtracklayer:
-library("rtracklayer")
-
 ## Load ggplot2:
 library('ggplot2')
 
