@@ -591,9 +591,9 @@ expression_survival_function_graph <- function(
     legend(
       
       # Set X position of legend in graph:
-      #### NOTE: WILL NEED TO CHANGE THIS TO MAKE IT 
-      #### MODULABLE RELATIVE TO THE CANCER DATA?
-      x= 5000,
+      x= (
+        max(high_low_relevant_clinical$days_to_last_followup) - 2500
+      ),
       
       # Set Y position of legend in graph
       y= 1,
@@ -1081,9 +1081,9 @@ methylation_survival_function_graph <- function(
     legend(
       
       # Set X position of legend in graph:
-      #### NOTE: WILL NEED TO CHANGE THIS TO MAKE IT 
-      #### MODULABLE RELATIVE TO THE CANCER DATA?
-      x= 5000,
+      x= (
+        max(high_low_relevant_clinical$days_to_last_followup) - 2500
+      ),
       
       # Set Y position of legend in graph
       y= 1,
