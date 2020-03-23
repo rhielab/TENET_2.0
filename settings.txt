@@ -97,9 +97,6 @@ hyperGnegCScatter=F
 ## step5 specific dataset functions ##
 makeScatter4gene=F
 makeScatter4probe=F
-makeCircos4gene=F
-makeCircos4probe=F
-circos.col=c("red")
 
 # survival *NEW*
 hypoGposSurvival=T
@@ -110,6 +107,14 @@ hyperGnegSurvival=F
 survival_top_n_genes=5
 high_thresh=0.75
 low_thresh=0.25
+
+# circos plot *NEW* 
+hypoGposCircos=T
+hypoGnegCircos=F
+hyperGposCircos=F
+hyperGnegCircos=F
+
+circos_top_n_genes=5
 
 
 ###### don't touch from here #######

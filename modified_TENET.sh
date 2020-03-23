@@ -537,46 +537,63 @@ if [[ $makeScatter4probe == "T" ]];
 then
 Rscript ../scripts/step5/make.simple.scatterplots.select.probe.R
 fi
-makeCircos4gene=$(head -n 100 ../settings.txt | tail -n 1)
-eval $makeCircos4gene
-if [[ $makeCircos4gene == "T" ]];
-then
-Rscript ../scripts/step5/make.simple.circosplots.select.gene.R
-fi
-makeCircos4probe=$(head -n 101 ../settings.txt | tail -n 1)
-eval $makeCircos4probe
-if [[ $makeCircos4probe == "T" ]];
-then
-Rscript ../scripts/step5/make.simple.circosplots.select.probe.R
-fi
 # Survival Analysis #
-hypoGposSurvival=$(head -n 105 ../settings.txt | tail -n 1)
+hypoGposSurvival=$(head -n 102 ../settings.txt | tail -n 1)
 eval $hypoGposSurvival
 if [[ $hypoGposSurvival == "T" ]];
 then
 mkdir "hypo.G+.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypometh.G+.R
 fi
-hypoGnegSurvival=$(head -n 106 ../settings.txt | tail -n 1)
+hypoGnegSurvival=$(head -n 103 ../settings.txt | tail -n 1)
 eval $hypoGnegSurvival
 if [[ $hypoGnegSurvival == "T" ]];
 then
 mkdir "hypo.G-.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypometh.G-.R
 fi
-hyperGposSurvival=$(head -n 107 ../settings.txt | tail -n 1)
+hyperGposSurvival=$(head -n 104 ../settings.txt | tail -n 1)
 eval $hyperGposSurvival
 if [[ $hyperGposSurvival == "T" ]];
 then
 mkdir "hyper.G+.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypermeth.G+.R
 fi
-hyperGnegSurvival=$(head -n 108 ../settings.txt | tail -n 1)
+hyperGnegSurvival=$(head -n 105 ../settings.txt | tail -n 1)
 eval $hyperGnegSurvival
 if [[ $hyperGnegSurvival == "T" ]];
 then
 mkdir "hyper.G-.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypermeth.G-.R
+fi
+# circos plots #
+hypoGposCircos=$(head -n 112 ../settings.txt | tail -n 1)
+eval $hypoGposCircos
+if [[ $hypoGposCircos == "T" ]];
+then
+mkdir "hypo.G+.output.circos"
+Rscript ../scripts/step5/make.circos.plots.hypometh.G+.R
+fi
+hypoGnegCircos=$(head -n 113 ../settings.txt | tail -n 1)
+eval $hypoGnegCircos
+if [[ $hypoGnegCircos == "T" ]];
+then
+mkdir "hypo.G-.output.circos"
+Rscript ../scripts/step5/make.circos.plots.hypometh.G-.R
+fi
+hyperGposCircos=$(head -n 114 ../settings.txt | tail -n 1)
+eval $hyperGposCircos
+if [[ $hyperGposCircos == "T" ]];
+then
+mkdir "hyper.G+.output.circos"
+Rscript ../scripts/step5/make.circos.plots.hypermeth.G+.R
+fi
+hyperGnegCircos=$(head -n 115 ../settings.txt | tail -n 1)
+eval $hyperGnegCircos
+if [[ $hyperGnegCircos == "T" ]];
+then
+mkdir "hyper.G-.output.circos"
+Rscript ../scripts/step5/make.circos.plots.hypermeth.G-.R
 fi
 # complex scatterplots #
 purityinfo=$(head -n 25 ../settings.txt | tail -n 1)
