@@ -12,10 +12,11 @@
 
 ELMER can be installed from Bioconductor by typing below in R:
 
+```diff
 if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
+install.packages("BiocManager")
 BiocManager::install("ELMER")
+``` 
 
 ###### C. Download the TENET 2.0 program from this page into directory of your choosing
 
@@ -27,8 +28,10 @@ You can either put txt files in ./external.data/data/methylation and ./external.
 
 ###### B. Fill out parameter settings in settings.txt 
 
-###### C. Run TENET by typing bash ./TENET.sh
-
+###### C. Run TENET by typing 
+```diff
+bash ./TENET.sh
+``` 
 (OPTIONAL 1) put other cells methylation data you want to use for purity adjustment
 you can put a txt file in ./external.data/othercells or put a rda file in ./external.data/others (name as "extData")
 see the example othercells data in http://farnhamlab.com/software
