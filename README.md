@@ -4,24 +4,30 @@
 
 ## 1.TENET 2.0 Installation
 
-### This build of TENET 2.0 depends on the following programs
+##### This build of TENET 2.0 depends on the following programs
 
-1. bedtools (please install from https://github.com/arq5x/bedtools2/releases)
-2. R package, ELMER
-ELMER can be installed from Bioconductor by typing below in R
+###### A. bedtools (please install from https://github.com/arq5x/bedtools2/releases)
+
+###### B. ELMER (R package)
+
+ELMER can be installed from Bioconductor by typing below in R:
+
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
 BiocManager::install("ELMER")
 
-- Download the TENET 2.0 program from this page
+###### C. Download the TENET 2.0 program from this page into directory of your choosing
 
-- Put matched sampleIDs methylation and gene expression data 
+## 2. TENET 2.0 Usage
+
+###### A. Get methylation and gene expression data with matched sample IDs
+
 You can either put txt files in ./external.data/data/methylation and ./external.data/data/expression (add case and ctrl in the file name, respectively) or put a rda file in ./external.data/data (for case, name as "metDataT", "expDataT", for ctrl, name as "metDataN", "expDataN")
 
-- fill out parameter settings in settings.txt 
+###### B. Fill out parameter settings in settings.txt 
 
-- run TENET by typing bash ./TENET.sh
+###### C. Run TENET by typing bash ./TENET.sh
 
 (OPTIONAL 1) put other cells methylation data you want to use for purity adjustment
 you can put a txt file in ./external.data/othercells or put a rda file in ./external.data/others (name as "extData")
@@ -43,7 +49,7 @@ see the example SM file in http://farnhamlab.com/software
 
 see the example Purity file in http://farnhamlab.com/software
 
-2. Parameters
+## 3. TENET 2.0 Parameters Primer
 
 prefix
 	Prefix for output files 
