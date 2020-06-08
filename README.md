@@ -29,28 +29,20 @@ You can either put txt files in ./external.data/data/methylation and ./external.
 ###### B. Fill out parameter settings in settings.txt 
 
 ###### C. Run TENET by typing 
+
 ```diff
 bash ./TENET.sh
 ``` 
 (OPTIONAL 1) put other cells methylation data you want to use for purity adjustment
 you can put a txt file in ./external.data/othercells or put a rda file in ./external.data/others (name as "extData")
-see the example othercells data in http://farnhamlab.com/software
 
 (OPTIONAL 2) if you have external datasets for enhancer peaks (bedfile), add files in ./external.data/enhancer
-see the example bed file in http://farnhamlab.com/software
 
 (OPTIONAL 3) if you have external datasets for NDR peaks (bedfile), add files in ./external.data/NDR
-see the example bed file in http://farnhamlab.com/software
 
 (OPTIONAL 4) if you have external datasets for other peaks (bed file), add files in ./external.data/feature
-see the example bed file in http://farnhamlab.com/software
 
 (OPTIONAL 5) if you have Purity, CNV, SM datasets for sample samples, add files in ./external.data/otherinfo (include "CNV", "SM", "Purity" in the file names)
-see the example CNV file in http://farnhamlab.com/software
-
-see the example SM file in http://farnhamlab.com/software
-
-see the example Purity file in http://farnhamlab.com/software
 
 ## 3. TENET 2.0 Parameters Primer
 
