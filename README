@@ -1,10 +1,10 @@
-#TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
+# TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-####Last updated: 6/7/2020
+#### Last updated: 6/7/2020
 
-##1.TENET 2.0 Installation
+## 1.TENET 2.0 Installation
 
-###This build of TENET 2.0 depends on the following programs
+### This build of TENET 2.0 depends on the following programs
 
 1. bedtools (please install from https://github.com/arq5x/bedtools2/releases)
 2. R package, ELMER
