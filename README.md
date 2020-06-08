@@ -51,14 +51,15 @@ see the example Purity file in http://farnhamlab.com/software
 
 ## 3. TENET 2.0 Parameters Primer
 
-prefix
+###### prefix
 	Prefix for output files 
 
-cores
+###### cores
 	Number of cores you want to use in your machine
 
-step0
+###### step0
 	T: Process data into a .rda file when you input a .txt file for methylation and expression data (when you put other cells' methylation data in a .txt file) 
+	
 	F: Use when you put a pre-created .rda file containing methylation and expression data
 
 step1
