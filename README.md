@@ -44,7 +44,7 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 
 (OPTIONAL 5) if you have Purity, CNV, SM datasets for sample samples, add files in ./external.data/otherinfo (include "CNV", "SM", "Purity" in the file names)
 
-## 3. TENET 2.0 Parameters Primer
+## 3. TENET 2.0 Parameters
 
 ###### prefix
 	Prefix for output files 
