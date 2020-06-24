@@ -4,6 +4,12 @@ load("../settings.rda")
 ## Load BioCircos:
 library('BioCircos')
 
+## Load parallel:
+library('parallel')
+
+## Load htmlwidgets:
+library('htmlwidgets')
+
 ## Import the gtf data for gencode v22 genes:
 gencode_v22_gtf <- read.delim(
   '../scripts/data/gencode_v22_gtf_file.tsv.gz',
