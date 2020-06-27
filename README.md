@@ -31,7 +31,6 @@ if (!requireNamespace("htmlwidgets", quietly = TRUE)){
   install.packages("htmlwidgets")
 }
 
-
 if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")
 }
