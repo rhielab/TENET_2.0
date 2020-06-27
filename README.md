@@ -8,14 +8,45 @@
 
 ###### A. bedtools (please install from https://github.com/arq5x/bedtools2/releases)
 
-###### B. ELMER (R package)
+###### B. R + R packages
 
-ELMER can be installed from Bioconductor by typing below in R:
+TENET 2.0 requires the use of several R packages including: BioCircos, ELMER, GenomicRanges, ggplot2, htmlwidgets, parallel, and survival. BiocManager may also be required to install these.
+
+The following code can be used to install these packages in your installation of R
 
 ```diff
-if (!requireNamespace("BiocManager", quietly = TRUE))
-install.packages("BiocManager")
-BiocManager::install("ELMER")
+if (!requireNamespace("ggplot2", quietly = TRUE)){
+  install.packages('ggplot2')
+}
+
+if (!requireNamespace("parallel", quietly = TRUE)){
+  install.packages("parallel")
+}
+
+if (!requireNamespace("survival", quietly = TRUE)){
+  install.packages("survival")
+}
+
+if (!requireNamespace("htmlwidgets", quietly = TRUE)){
+  install.packages("htmlwidgets")
+}
+
+
+if (!requireNamespace("BiocManager", quietly = TRUE)){
+  install.packages("BiocManager")
+}
+
+if (!requireNamespace("BioCircos", quietly = TRUE)){
+  BiocManager::install("BioCircos")
+}
+
+if (!requireNamespace("ELMER", quietly = TRUE)){
+  BiocManager::install("ELMER")
+}
+
+if (!requireNamespace("GenomicRanges", quietly = TRUE)){
+  BiocManager::install("GenomicRanges")
+}
 ``` 
 
 ###### C. Download the TENET 2.0 program from this page into directory of your choosing
