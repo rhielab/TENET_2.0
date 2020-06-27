@@ -15,19 +15,19 @@ TENET 2.0 requires the use of several R packages including: BioCircos, ELMER, Ge
 The following code can be used to install these packages in your installation of R
 
 ```diff
-if (!requireNamespace("ggplot2", quietly = TRUE)){
+if (!require("ggplot2", quietly = TRUE)){
   install.packages('ggplot2')
 }
 
-if (!requireNamespace("parallel", quietly = TRUE)){
+if (!require("parallel", quietly = TRUE)){
   install.packages("parallel")
 }
 
-if (!requireNamespace("survival", quietly = TRUE)){
+if (!require("survival", quietly = TRUE)){
   install.packages("survival")
 }
 
-if (!requireNamespace("htmlwidgets", quietly = TRUE)){
+if (!require("htmlwidgets", quietly = TRUE)){
   install.packages("htmlwidgets")
 }
 
@@ -35,15 +35,15 @@ if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")
 }
 
-if (!requireNamespace("BioCircos", quietly = TRUE)){
+if (!require("BioCircos", quietly = TRUE)){
   BiocManager::install("BioCircos")
 }
 
-if (!requireNamespace("ELMER", quietly = TRUE)){
+if (!require("ELMER", quietly = TRUE)){
   BiocManager::install("ELMER")
 }
 
-if (!requireNamespace("GenomicRanges", quietly = TRUE)){
+if (!require("GenomicRanges", quietly = TRUE)){
   BiocManager::install("GenomicRanges")
 }
 ``` 
