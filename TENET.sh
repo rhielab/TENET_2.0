@@ -595,6 +595,35 @@ then
 mkdir "hyper.G-.output.circos"
 Rscript ../scripts/step5/make.circos.plots.hypermeth.G-.R
 fi
+# TAD analysis #
+hypoGposTAD=$(head -n 120 ../settings.txt | tail -n 1)
+eval $hypoGposTAD
+if [[ $hypoGposTAD == "T" ]];
+then
+mkdir "hypo.G+.output.TAD"
+Rscript ../scripts/step5/make.TAD.tables.hypometh.G+.R
+fi
+hypoGnegTAD=$(head -n 121 ../settings.txt | tail -n 1)
+eval $hypoGnegTAD
+if [[ $hypoGnegTAD == "T" ]];
+then
+mkdir "hypo.G-.output.TAD"
+Rscript ../scripts/step5/make.TAD.tables.hypometh.G-.R
+fi
+hyperGposTAD=$(head -n 122 ../settings.txt | tail -n 1)
+eval $hyperGposTAD
+if [[ $hyperGposTAD == "T" ]];
+then
+mkdir "hyper.G+.output.TAD"
+Rscript ../scripts/step5/make.TAD.tables.hypermeth.G+.R
+fi
+hyperGnegTAD=$(head -n 123 ../settings.txt | tail -n 1)
+eval $hyperGnegTAD
+if [[ $hyperGnegTAD == "T" ]];
+then
+mkdir "hyper.G-.output.TAD"
+Rscript ../scripts/step5/make.TAD.tables.hypermeth.G-.R
+fi
 # complex scatterplots #
 purityinfo=$(head -n 25 ../settings.txt | tail -n 1)
 eval $purityinfo
