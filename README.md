@@ -388,5 +388,28 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 
 ###### circos_top_n_genes
 	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create circos plots for above
+	
+###### hypoGposTAD
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes positively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	
+	F: Don't make TAD tables for these transcriptional regulators and their listed probes
+	
+###### hypoGnegTAD
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes negatively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	
+	F: Don't make TAD tables for these transcriptional regulators and their listed probes
+	
+###### hyperGposTAD
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes positively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	
+	F: Don't make TAD tables for these transcriptional regulators and their listed probes
+	
+###### hyperGnegTAD
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes negatively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	
+	F: Don't make TAD tables for these transcriptional regulators and their listed probes
+	
+###### TAD_top_n_genes
+	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create TAD tables for above
 
 ##### If you would like to run TENET newly with different settings, we recommend you to move output folders from the previous run (e.g. ./step3/ ./step4/) somewhere else or rename them in order to avoid bringing wrong files in a new run.
