@@ -46,6 +46,10 @@ if (!require("ELMER", quietly = TRUE)){
 if (!require("GenomicRanges", quietly = TRUE)){
   BiocManager::install("GenomicRanges")
 }
+
+TENET 2.0 also makes use of heatmap.3 functionality, which is installed by the relevant scripts in step5 with
+source_url("https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R")
+
 ``` 
 
 ###### C. Download the TENET 2.0 program from this page into directory of your choosing
@@ -411,5 +415,28 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	
 ###### TAD_top_n_genes
 	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create TAD tables for above
+	
+###### hypoGposMetHeatmap
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes positively linked to these regulators based on user input files.
+	
+	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
+	
+###### hypoGnegMetHeatmap
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes negatively linked to these regulators based on user input files.
+	
+	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
+	
+###### hyperGposMetHeatmap
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes positively linked to these regulators based on user input files.
+	
+	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
+	
+###### hyperGnegMetHeatmap
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes negatively linked to these regulators based on user input files.
+	
+	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
+	
+###### probe_heatmap_top_n_genes
+	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create methylation heatmaps for above
 
 ##### If you would like to run TENET newly with different settings, we recommend you to move output folders from the previous run (e.g. ./step3/ ./step4/) somewhere else or rename them in order to avoid bringing wrong files in a new run.
