@@ -124,6 +124,14 @@ hyperGnegTAD=T
 
 TAD_top_n_genes=5
 
+# Methylation Heatmaps *NEW*
+hypoGposMetHeatmap=T
+hypoGnegMetHeatmap=T
+hyperGposMetHeatmap=T
+hyperGnegMetHeatmap=T
+
+probe_heatmap_top_n_genes=5
+
 
 ###### don't touch from here #######
 save.image("settings.rda")

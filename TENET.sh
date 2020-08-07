@@ -624,6 +624,35 @@ then
 mkdir "hyper.G-.output.TAD"
 Rscript ../scripts/step5/make.TAD.tables.hypermeth.G-.R
 fi
+# Methylation heat map analysis #
+hypoGposMetHeatmap=$(head -n 128 ../settings.txt | tail -n 1)
+eval $hypoGposMetHeatmap
+if [[ $hypoGposMetHeatmap == "T" ]];
+then
+mkdir "hypo.G+.output.probe.heatmap"
+Rscript ../scripts/step5/make.met.heatmap.hypometh.G+.R
+fi
+hypoGnegMetHeatmap=$(head -n 129 ../settings.txt | tail -n 1)
+eval $hypoGnegMetHeatmap
+if [[ $hypoGnegMetHeatmap == "T" ]];
+then
+mkdir "hypo.G-.output.probe.heatmap"
+Rscript ../scripts/step5/make.met.heatmap.hypometh.G-.R
+fi
+hyperGposMetHeatmap=$(head -n 130 ../settings.txt | tail -n 1)
+eval $hyperGposMetHeatmap
+if [[ $hyperGposMetHeatmap == "T" ]];
+then
+mkdir "hyper.G+.output.probe.heatmap"
+Rscript ../scripts/step5/make.met.heatmap.hypermeth.G+.R
+fi
+hyperGnegMetHeatmap=$(head -n 131 ../settings.txt | tail -n 1)
+eval $hyperGnegMetHeatmap
+if [[ $hyperGnegMetHeatmap == "T" ]];
+then
+mkdir "hyper.G-.output.probe.heatmap"
+Rscript ../scripts/step5/make.met.heatmap.hypermeth.G-.R
+fi
 # complex scatterplots #
 purityinfo=$(head -n 25 ../settings.txt | tail -n 1)
 eval $purityinfo
