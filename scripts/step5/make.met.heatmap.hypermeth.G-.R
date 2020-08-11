@@ -1,12 +1,5 @@
-## Load devtools
-if (!require("devtools", quietly = TRUE)){
-  
-  install.packages("devtools")
-  
-}
-
-## Load latest version of heatmap.3 function
-source_url("https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R")
+## Load heatmap.3 function
+source("../scripts/data/heatmap.3.R")
 
 ## Load settings information from .rda file:
 load("../settings.rda")
@@ -43,9 +36,9 @@ rm(gencode_v22_genes)
 ## Read TF link counts:
 ordered_TFs_by_link_count <- read.delim(
   file= paste(
-    "./hyper.G+.output.histogram/",
+    "./hyper.G-.output.histogram/",
     prefix,
-    ".hyper.G+.links.all.tf.freq.txt",
+    ".hyper.G-.links.all.tf.freq.txt",
     sep=''
   ),
   stringsAsFactors = FALSE
@@ -53,7 +46,7 @@ ordered_TFs_by_link_count <- read.delim(
 
 ## Load the CpGs linked to each gene:
 CpG_linkage_dataset <- read.delim(
-  file= '../step4/hyper.G+.output/hyper.G+.link.zscore.perm.all.optimized.links.txt',
+  file= '../step4/hyper.G-.output/hyper.G-.link.zscore.perm.all.optimized.links.txt',
   stringsAsFactors = FALSE
 )
 
@@ -206,7 +199,7 @@ path_to_folder <- getwd()
 ## This is a comination of the probe name with the linked gene:
 heatmap_plot_pdf_title <- paste(
   path_to_folder,
-  '/hyper.G+.output.probe.heatmap/hyper.G+_top_',
+  '/hyper.G-.output.probe.heatmap/hyper.G-_top_',
   probe_heatmap_top_n_genes,
   '_linked_genes_heatmap.pdf',
   sep=''

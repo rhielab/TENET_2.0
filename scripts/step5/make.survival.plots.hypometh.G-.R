@@ -30,7 +30,7 @@ gencode_v22_genes_df$gene_id <- sub(
 rownames(gencode_v22_genes_df) <- gencode_v22_genes_df$gene_id
 
 ## Remove the original gtf object and associated data frame:
-rm(gtf, gencode_v22_genes)
+rm(gencode_v22_genes)
 
 ## Read TF link counts:
 ordered_TFs_by_link_count <- read.delim(
