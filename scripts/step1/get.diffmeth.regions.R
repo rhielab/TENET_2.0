@@ -123,7 +123,7 @@ if (elmerENH==T){
   # get ELMER enhancers from v1.5.1
   # For future versions, update this to include multiple sets!:
   TENET_1.5.1_file <- read.delim(
-    '../scripts/data/ELMERv.1.5.1_LUAD_TENET_probes.tsv',
+    '../scripts/data/ELMERv.1.5.1_TENET_probes.tsv',
     stringsAsFactors = FALSE
   )
   
