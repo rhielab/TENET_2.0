@@ -39,16 +39,14 @@ if (!require("BioCircos", quietly = TRUE)){
   BiocManager::install("BioCircos")
 }
 
-if (!require("ELMER", quietly = TRUE)){
-  BiocManager::install("ELMER")
-}
-
 if (!require("GenomicRanges", quietly = TRUE)){
   BiocManager::install("GenomicRanges")
 }
 
 TENET 2.0 also makes use of heatmap.3 functionality, which is installed by the relevant scripts in step5 with
 source_url("https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R")
+
+TENET 2.0 also makes use of enhancer probes from v1.5.1 of the ELMER package
 
 ``` 
 
