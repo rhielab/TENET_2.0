@@ -10,7 +10,7 @@
 
 ###### B. R + R packages
 
-TENET 2.0 requires the use of several R packages including: BioCircos, ELMER, GenomicRanges, ggplot2, htmlwidgets, parallel, and survival. BiocManager may also be required to install these.
+TENET 2.0 requires the use of several R packages including: BioCircos, GenomicRanges, ggplot2, htmlwidgets, matlab, parallel, and survival. BiocManager may also be required to install these.
 
 The following code can be used to install these packages in your installation of R
 
@@ -31,6 +31,10 @@ if (!require("htmlwidgets", quietly = TRUE)){
   install.packages("htmlwidgets")
 }
 
+if (!require("matlab", quietly = TRUE)){
+  install.packages("matlab")
+}
+
 if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")
 }
@@ -43,8 +47,8 @@ if (!require("GenomicRanges", quietly = TRUE)){
   BiocManager::install("GenomicRanges")
 }
 
-TENET 2.0 also makes use of heatmap.3 functionality, which is installed by the relevant scripts in step5 with
-source_url("https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R")
+TENET 2.0 also makes use of heatmap.3 functionality from: 
+https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R
 
 TENET 2.0 also makes use of enhancer probes from v1.5.1 of the ELMER package
 
