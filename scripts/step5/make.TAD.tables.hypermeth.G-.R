@@ -78,6 +78,11 @@ TAD_file_list <- vector(
   length = length(TAD_file_paths)
 )
 
+## Remove the .rtf file from being loaded as a TAD file:
+TAD_file_paths <- TAD_file_paths[
+  !(sub('.*\\.', '', TAD_file_paths)=='rtf')
+  ]
+
 ## Prepare and load the TAD files:
 ## This assumes the files are bed3 formatted with the first 3 columns:
 ## Being the chromosome, start, and end coordinates:

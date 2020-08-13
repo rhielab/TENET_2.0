@@ -72,6 +72,11 @@ TAD_file_paths <- list.files(
   full.names=TRUE
 )
 
+## Remove the .rtf file from being loaded as a TAD file:
+TAD_file_paths <- TAD_file_paths[
+  !(sub('.*\\.', '', TAD_file_paths)=='rtf')
+]
+
 ## Create an empty list to load each of the files into:
 TAD_file_list <- vector(
   mode = "list", 
