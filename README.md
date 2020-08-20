@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 6/7/2020
+#### Last updated: 8/13/2020
 
 ## 1.TENET 2.0 Installation
 
@@ -10,7 +10,7 @@
 
 ###### B. R + R packages
 
-TENET 2.0 requires the use of several R packages including: BioCircos, ELMER, GenomicRanges, ggplot2, htmlwidgets, parallel, and survival. BiocManager may also be required to install these.
+TENET 2.0 requires the use of several R packages including: BioCircos, GenomicRanges, ggplot2, htmlwidgets, matlab, parallel, and survival. BiocManager may also be required to install these.
 
 The following code can be used to install these packages in your installation of R
 
@@ -31,6 +31,10 @@ if (!require("htmlwidgets", quietly = TRUE)){
   install.packages("htmlwidgets")
 }
 
+if (!require("matlab", quietly = TRUE)){
+  install.packages("matlab")
+}
+
 if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")
 }
@@ -43,8 +47,8 @@ if (!require("GenomicRanges", quietly = TRUE)){
   BiocManager::install("GenomicRanges")
 }
 
-TENET 2.0 also makes use of heatmap.3 functionality, which is installed by the relevant scripts in step5 with
-source_url("https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R")
+TENET 2.0 also makes use of heatmap.3 functionality from: 
+https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R
 
 TENET 2.0 also makes use of enhancer probes from v1.5.1 of the ELMER package
 
@@ -342,22 +346,22 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	F: Don't generate simple scatterplots for the probes you selected in ./external.data/otherinfo
 
 ###### hypoGposSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their linked hypomethylated enhancers (hypoGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) linked hypomethylated enhancers (hypoGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and linked hypomethylated enhancers.
 
 ###### hypoGnegSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their negatively-linked hypomethylated enhancers (hypoGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) negatively-linked hypomethylated enhancers (hypoGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and negatively-linked hypomethylated enhancers.
 
 ###### hyperGposSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their linked hypermethylated enhancers (hyperGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) linked hypermethylated enhancers (hyperGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and linked hypermethylated enhancers.
 
 ###### hypoGposSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their negatively-linked hypermethylated enhancers (hyperGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) negatively-linked hypermethylated enhancers (hyperGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and negatively-linked hypermethylated enhancers.
 
