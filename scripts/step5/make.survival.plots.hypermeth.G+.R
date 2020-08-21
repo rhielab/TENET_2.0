@@ -1144,15 +1144,20 @@ methylation_survival_function_graph <- function(
   
 }
 
-## Create survival plots for each of the genes designated:
-mclapply(
-  X= top_gene_names,
-  FUN= expression_survival_function_graph,
-  high_cutoff= high_thresh,
-  low_cutoff= low_thresh,
-  graph= TRUE,
-  mc.cores= cores
-)
+## If visualize_survival_plots_genes is TRUE, generate the plots:
+if(visualize_survival_plots_genes==TRUE){
+  
+  ## Create survival plots for each of the genes designated:
+  mclapply(
+    X= top_gene_names,
+    FUN= expression_survival_function_graph,
+    high_cutoff= high_thresh,
+    low_cutoff= low_thresh,
+    graph= TRUE,
+    mc.cores= cores
+  )
+  
+}
 
 ## Get survival information for each gene:
 gene_survival_results_list <- mclapply(
@@ -1326,15 +1331,20 @@ CpGs_linked_nominally_significant_names <- names(
   CpGs_linked_p_values_nominally_significant_ordered
 )
 
-#### Save plots for the nominally significant CpGs:
-mclapply(
-  X= CpGs_linked_nominally_significant_names,
-  FUN= methylation_survival_function_graph,
-  high_cutoff= high_thresh,
-  low_cutoff= low_thresh,
-  graph= TRUE,
-  mc.cores= cores
-)
+## If visualize_survival_plots_probes is TRUE, generate the plots:
+if(visualize_survival_plots_probes==TRUE){
+  
+  #### Save plots for the nominally significant CpGs:
+  mclapply(
+    X= CpGs_linked_nominally_significant_names,
+    FUN= methylation_survival_function_graph,
+    high_cutoff= high_thresh,
+    low_cutoff= low_thresh,
+    graph= TRUE,
+    mc.cores= cores
+  )
+  
+}
 
 ## Save the probe information as a .tsv:
 write.table(

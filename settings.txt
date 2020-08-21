@@ -105,6 +105,8 @@ hyperGposSurvival=F
 hyperGnegSurvival=F
 
 survival_top_n_genes=5
+visualize_survival_plots_genes=T
+visualize_survival_plots_probes=T
 high_thresh=0.75
 low_thresh=0.25
 
