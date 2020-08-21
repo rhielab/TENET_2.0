@@ -367,6 +367,14 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 
 ###### survival_top_n_genes
 	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create survival plots for above
+	
+###### visualize_survival_plots_genes
+	T: Generate the survival plots for the top n genes specified above (along with a .tsv file containing survival information for the top n genes)
+	F: Don't generate the survival plots for the top n genes specified above (still generate the .tsv file containing survival information for the top n genes)
+	
+###### visualize_survival_plots_probes
+	T: Generate the survival plots for the unique probes linked to at least one of the top n genes specified above (along with a .tsv file containing survival information for these probes)
+	F: Don't generate the survival plots for the unique probes linked to at least one of the top n genes specified above (still generate the .tsv file containing survival information for these probes)
 
 ###### high_thresh
 	Set a threshold for proportion of samples to include in the high expression/methylation group (range from 0 to 1, and should be greater than low_thresh to prevent samples from appearing in both groups)
