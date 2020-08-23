@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 8/13/2020
+#### Last updated: 8/23/2020
 
 ## 1.TENET 2.0 Installation
 
@@ -346,22 +346,22 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	F: Don't generate simple scatterplots for the probes you selected in ./external.data/otherinfo
 
 ###### hypoGposSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) linked hypomethylated enhancers (hypoGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) linked hypomethylated enhancers (hypoGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. Note: Using this requires that hypoGposHistogram is also set to "T"
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and linked hypomethylated enhancers.
 
 ###### hypoGnegSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) negatively-linked hypomethylated enhancers (hypoGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) negatively-linked hypomethylated enhancers (hypoGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. Note: Using this requires that hypoGnegHistogram is also set to "T"
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and negatively-linked hypomethylated enhancers.
 
 ###### hyperGposSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) linked hypermethylated enhancers (hyperGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) linked hypermethylated enhancers (hyperGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. Note: Using this requires that hyperGposHistogram is also set to "T"
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and linked hypermethylated enhancers.
 
-###### hypoGposSurvival
-	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) negatively-linked hypermethylated enhancers (hyperGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. 
+###### hyperGnegSurvival
+	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) negatively-linked hypermethylated enhancers (hyperGneg) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. Note: Using this requires that hyperGnegHistogram is also set to "T"
 	
 	F: Don't make Kaplan-Meier survival curves for top transcriptional regulators and negatively-linked hypermethylated enhancers.
 
@@ -383,22 +383,22 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	Set a threshold for proportion of samples to include in the low expression group (range from 0 to 1, and should be less than high_thresh to prevent samples from appearing in both groups)
 
 ###### hypoGposCircos
-	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their linked hypomethylated enhancers (hypoGpos)
+	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their linked hypomethylated enhancers (hypoGpos). Note: Using this requires that hypoGposHistogram is also set to "T"
 	
 	F: Don't make circos plots for transcriptional regulators and their relationship to their linked hypomethylated enhancers
 
 ###### hypoGnegCircos
-	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their negatively-linked hypomethylated enhancers (hypoGneg)
+	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their negatively-linked hypomethylated enhancers (hypoGneg). Note: Using this requires that hypoGnegHistogram is also set to "T"
 	
 	F: Don't make circos plots for transcriptional regulators and their relationship to their negatively-linked hypomethylated enhancers
 
 ###### hypoGposCircos
-	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their linked hypermethylated enhancers (hyperGpos)
+	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their linked hypermethylated enhancers (hyperGpos). Note: Using this requires that hyperGposHistogram is also set to "T"
 	
 	F: Don't make circos plots for transcriptional regulators and their relationship to their linked hypermethylated enhancers
 
 ###### hypoGnegCircos
-	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their negatively-linked hypermethylated enhancers (hyperGneg)
+	T: Make circos plots for (number specified by the circos_top_n_genes parameter) transcriptional regulators displaying relationship to their negatively-linked hypermethylated enhancers (hyperGneg). Note: Using this requires that hyperGnegHistogram is also set to "T"
 	
 	F: Don't make circos plots for transcriptional regulators and their relationship to their negatively-linked hypermethylated enhancers
 
@@ -406,22 +406,22 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create circos plots for above
 	
 ###### hypoGposTAD
-	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes positively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes positively linked to these regulators and the genes that lie within the same TADs as them based on user input files. Note: Using this requires that hypoGposHistogram is also set to "T"
 	
 	F: Don't make TAD tables for these transcriptional regulators and their listed probes
 	
 ###### hypoGnegTAD
-	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes negatively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes negatively linked to these regulators and the genes that lie within the same TADs as them based on user input files. Note: Using this requires that hypoGnegHistogram is also set to "T"
 	
 	F: Don't make TAD tables for these transcriptional regulators and their listed probes
 	
 ###### hyperGposTAD
-	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes positively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes positively linked to these regulators and the genes that lie within the same TADs as them based on user input files. Note: Using this requires that hyperGposHistogram is also set to "T"
 	
 	F: Don't make TAD tables for these transcriptional regulators and their listed probes
 	
 ###### hyperGnegTAD
-	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes negatively linked to these regulators and the genes that lie within the same TADs as them based on user input files.
+	T: Make TAD tables for (number specified by the TAD_top_n_genes parameter) top transcriptional regulators in this category, listing probes negatively linked to these regulators and the genes that lie within the same TADs as them based on user input files. Note: Using this requires that hyperGnegHistogram is also set to "T"
 	
 	F: Don't make TAD tables for these transcriptional regulators and their listed probes
 	
