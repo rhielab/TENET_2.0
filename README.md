@@ -429,22 +429,22 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create TAD tables for above
 	
 ###### hypoGposMetHeatmap
-	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes positively linked to these regulators based on user input files.
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes positively linked to these regulators based on user input files. Note: Using this requires that hypoGposHistogram is also set to "T"
 	
 	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
 	
 ###### hypoGnegMetHeatmap
-	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes negatively linked to these regulators based on user input files.
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes negatively linked to these regulators based on user input files. Note: Using this requires that hypoGnegHistogram is also set to "T"
 	
 	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
 	
 ###### hyperGposMetHeatmap
-	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes positively linked to these regulators based on user input files.
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes positively linked to these regulators based on user input files. Note: Using this requires that hyperGposHistogram is also set to "T"
 	
 	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
 	
 ###### hyperGnegMetHeatmap
-	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes negatively linked to these regulators based on user input files.
+	T: Make methylation heatmaps of probes linked to, and gene expression of the top (number specified by the probe_heatmap_top_n_genes parameter) transcriptional regulators in this category, using unique probes negatively linked to these regulators based on user input files. Note: Using this requires that hyperGnegHistogram is also set to "T"
 	
 	F: Don't make methylation heatmaps for these transcriptional regulators and their listed probes
 	
