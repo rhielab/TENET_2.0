@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 8/23/2020
+#### Last updated: 8/31/2020
 
 ## 1.TENET 2.0 Installation
 
