@@ -47,12 +47,12 @@ if (!require("GenomicRanges", quietly = TRUE)){
   BiocManager::install("GenomicRanges")
 }
 
+```
 TENET 2.0 also makes use of heatmap.3 functionality from: 
 https://raw.githubusercontent.com/obigriffith/biostar-tutorials/master/Heatmaps/heatmap.3.R
 
 TENET 2.0 also makes use of enhancer probes from v1.5.1 of the ELMER package
 
-``` 
 
 ###### C. Download the TENET 2.0 program from this page into directory of your choosing
 
