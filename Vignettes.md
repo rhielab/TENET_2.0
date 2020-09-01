@@ -2,7 +2,7 @@
 
 #### Last updated: 8/31/2020
 
-## TENET 2.0 Data Structures:
+## TENET 2.0 Input Data Structures:
 
 ##### Gene Expression Datasets:
 
@@ -100,5 +100,20 @@ TCGA-05-4244        Alive
 TCGA-05-4245        Alive
 TCGA-05-4249        Alive
 TCGA-05-4250         Dead
+
+```
+
+##### Enhancer and Nucleosome Depleted Regions (NDR) Datasets:
+
+User might also choose to supply information for potential enhancer regions of interest (e.g. H3K27ac or H3K4me1 ChIP-seq peaks), as well as NDR regions (e.g. DNaseI hypersensitive sites, ATAC-seq, FAIRE-seq peaks) from relevant cell types to their experiment. Enhancer datasets should be placed in  the './external.data/enhancer/' directory, while NDR datasets should be placed in './external.data/NDR/'. Both enhancer and NDR datasets should be tab-delimited, bed-like files with chromosome information in the first column, listed as 'chr#', the second column containing start positions for the peaks, and the third column containing the end position. Other columns can be included but will not be considered in the TENET 2.0 analysis Row and column names should not be included in the files. Enhancer and NDR datasets should be aligned to the human hg38 reference genome, as TENET 2.0 databases are based off that reference genome. 
+
+```diff
+chr1	777850	778178
+chr1	778359	779442
+chr1	779553	780185
+chr1	817095	817495
+chr1	826649	826989
+chr1	827249	827622
+chr1	903779	905685
 
 ```
