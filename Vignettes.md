@@ -117,3 +117,9 @@ chr1	827249	827622
 chr1	903779	905685
 
 ```
+
+## TENET 2.0 Output and recommended functions:
+
+##### Recommended functions:
+
+TENET 2.0 is a complex program, and we higly recommended to run it on a computing cluster. All five steps should ideally be run (steps 1-4 are vital for generating data, and step5 is recommended for basic parsing of said data) and we recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though HypoGplus and HyperGplus analyses are most likely to be relevant as these encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. For step 5 functions, it is recommended at the moment to run the histogram, survival, circos, TAD, and heatmap functions. 
