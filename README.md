@@ -315,8 +315,7 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	F: Don't generate genome browser tracks for hyperGneg
 
 ###### hypoGposCScatter
-	T: Make complex scatterplots for hypomethylated enhancers to genes positively linked (hypoGpos) using files in 
-./external.data/otherinfo (Purity, CNV, SM datasets)
+	T: Make complex scatterplots for hypomethylated enhancers to genes positively linked (hypoGpos) using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
 
 	F: Don't generate complex scatterplots for hypoGpos
 
