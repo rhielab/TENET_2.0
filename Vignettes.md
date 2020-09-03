@@ -123,3 +123,9 @@ chr1	903779	905685
 ##### Recommended functions:
 
 TENET 2.0 is a complex program, and we higly recommended to run it on a computing cluster. All five steps should ideally be run (steps 1-4 are vital for generating data, and step5 is recommended for basic parsing of said data) and we recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though HypoGplus and HyperGplus analyses are most likely to be relevant as these encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. For step 5 functions, it is recommended at the moment to run the histogram, survival, circos, TAD, and heatmap functions. 
+
+##### Histogram output:
+
+Histogram functions output a variety of both .txt and .pdf files containing summarized information about the number of links to relevant transcriptional regulators. The .txt files contain the total number of relevant linked DNA methylation probes to relevant transcription factors organized from the regulators with the largest number of links to the smallest. The .pdf files take the information from the corresponding .txt files and display that information in the form of a heatmap, showing a given number of links on the x-axis, and the number of regulators with that number of links on the y-axis. For complete information about all links to all transcriptional regulators, look at the 'links.all.tf.freq' list and historgram.
+
+This function is a prerequisite for several other important TENET functions in the step5 analyses including the survival, circos, TAD, and heatmap functions. 
