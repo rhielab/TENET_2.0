@@ -129,3 +129,13 @@ TENET 2.0 is a complex program, and we higly recommended to run it on a computin
 Histogram functions output a variety of both .txt and .pdf files containing summarized information about the number of links to relevant transcriptional regulators. The .txt files contain the total number of relevant linked DNA methylation probes to relevant transcription factors organized from the regulators with the largest number of links to the smallest. The .pdf files take the information from the corresponding .txt files and display that information in the form of a heatmap, showing a given number of links on the x-axis, and the number of regulators with that number of links on the y-axis. For complete information about all links to all transcriptional regulators, look at the 'links.all.tf.freq' list and historgram.
 
 This function is a prerequisite for several other important TENET functions in the step5 analyses including the survival, circos, TAD, and heatmap functions. 
+
+```diff
+gene.nameID	Freq	geneSymbol	geneID
+CENPA|ENSG00000115163	875	CENPA	ENSG00000115163
+FOXM1|ENSG00000111206	845	FOXM1	ENSG00000111206
+TCF24|ENSG00000261787	843	TCF24	ENSG00000261787
+MYBL2|ENSG00000101057	840	MYBL2	ENSG00000101057
+SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
+
+```
