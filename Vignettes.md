@@ -154,3 +154,7 @@ MYBL2	21	453	0	0	14.2238015665364	18.0201935332658	21	453	0	109	215	109	15.72212
 SOX2	21	453	0	0	13.3581835433044	15.9366883414569	21	453	0	109	214	110	12.0606586527843	16.3308839057577	19.0555956835861	0.211009174311927	0.181818181818182	low_expression_low_survival	0.0799571894772609
 
 ```
+
+##### Circos output:
+
+Circos functions output .html files that contain circos plots demonstrating the links from the top transcriptional regulators (as specified by the user) to their linked DNA methylation probes using the BioCircos package. Currently the links are generated in red, and the plots can be saved as .pdfs by the user by opening the html files and printing the page that opens using the Print -> save as .pdf options
