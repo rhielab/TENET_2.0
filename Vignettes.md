@@ -158,3 +158,11 @@ SOX2	21	453	0	0	13.3581835433044	15.9366883414569	21	453	0	109	214	110	12.060658
 ##### Circos output:
 
 Circos functions output .html files that contain circos plots demonstrating the links from the top transcriptional regulators (as specified by the user) to their linked DNA methylation probes using the BioCircos package. Currently the links are generated in red, and the plots can be saved as .pdfs by the user by opening the html files and printing the page that opens using the Print -> save as .pdf options
+
+##### TAD output:
+
+TAD functions output .tsv files that contain TAD information for all unique DNA methylation probes linked to the top transcriptional regulators (as specified by the user). These files note which of the top transcriptional regulators each probe is linked to, and lists out all the genes by Ensembl ID and name within the TAD files supplied by the user (in './external.data/TAD/') in a comma-delimited list (these lists can be rather long so a sample is not noted here). 
+
+##### Heatmap output:
+
+Heatmap functions output .pdf files displaying a heatmap with samples in the columns and each unique DNA methylation probes linked to the top transcriptional regulators (as specified by the user). Above the heatmap bars displaying relative expression of each of top transcriptional regulator genes (as specified by the user) are shown (scaled using the function: [X - Xmin] /[Xmax - Xmin], with 0 expression values set to the minimum, non-zero value). Heatmaps are plotted using the heatmap.3 function with euclidean distance and Ward.D2 function for clustering. 
