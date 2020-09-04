@@ -9,7 +9,7 @@ Mullen DJ et al. TENET 2.0: identification of key transcriptional regulators and
 
 Rhie SK et al. Identification of activated enhancers and linked transcription factors in breast, prostate, and kidney tumors by tracing enhancer networks using epigenetic traits. Epigenetics Chromatin 2016 Nov 9;9:50. PMID: 27833659
 
-## 1.TENET 2.0 Installation
+## 1. TENET 2.0 Installation
 
 ##### This build of TENET 2.0 depends on the following programs
 
