@@ -86,7 +86,7 @@ DNA methylation and expression data should be matched to have same number of sam
 
 ##### Clinical Dataset:
 
-The clinical dataset is used only for the survival functions in step 5 of TENET. Currently, clinical data must be stored as an .rda object in either './external.data/data/clinical' or as as part of a combined .rda file with the DNA methylation and gene expression data. In either case, the clinical data should be contained as a data frame named clinical_data. The clinical data object should contain four specifically named columns: "bcr_patient_barcode", "days_to_death", "days_to_last_followup", and "vital_status". "bcr_patient_barcode" should contain unique ids such as TCGA barcodes matching the DNA methylation and gene expression data names through the first 12 characters (up through the "Participant" element of the barcode - see: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/). "days_to_death" should contain the number of days a given patient survived after the sample was collected (for patients who are still alive, this should be 'NA'). "days_to_last_followup" should contain the number of days a given patient has survived since the data was collected (for patients who have died, this should be 'NA'). Finally "vital_status" should note whether a given patient is "Dead" or "Alive". Below shows an example clinical datasets (e.g. clinical) 
+The clinical dataset is used only for the survival functions in step 5 of TENET. Currently, clinical data must be stored as an .rda object in either './external.data/data/clinical' or as as part of a combined .rda file with the DNA methylation and gene expression data. In either case, the clinical data should be contained as a data frame named clinical_data. The clinical data object should contain four specifically named columns: "bcr_patient_barcode", "days_to_death", "days_to_last_followup", and "vital_status". "bcr_patient_barcode" should contain unique ids such as TCGA barcodes matching the DNA methylation and gene expression data names through the first 12 characters (up through the "Participant" element of the barcode - see: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/). "days_to_death" should contain the number of days a given patient survived after the sample was collected (for patients who are still alive, this should be 'NA'). "days_to_last_followup" should contain the number of days a given patient has survived since the data was collected (for patients who have died, this should be 'NA'). Finally "vital_status" should note whether a given patient is "Dead" or "Alive". Below shows an example clinical dataset (e.g. clinical) 
 
 ```diff
 > head(clinical,4)
@@ -105,7 +105,7 @@ TCGA-05-4250         Dead
 
 ##### Enhancer and Nucleosome Depleted Regions (NDR) Datasets:
 
-User might also choose to supply information for potential enhancer regions of interest (e.g. H3K27ac or H3K4me1 ChIP-seq peaks), as well as NDR regions (e.g. DNaseI hypersensitive sites, ATAC-seq, FAIRE-seq peaks) from relevant cell types to their experiment. Enhancer datasets should be placed in  the './external.data/enhancer/' directory, while NDR datasets should be placed in './external.data/NDR/'. Both enhancer and NDR datasets should be tab-delimited, bed-like files with chromosome information in the first column, listed as 'chr#', the second column containing start positions for the peaks, and the third column containing the end position. Other columns can be included but will not be considered in the TENET 2.0 analysis Row and column names should not be included in the files. Enhancer and NDR datasets should be aligned to the human hg38 reference genome, as TENET 2.0 databases are based off that reference genome. 
+User might also choose to supply information for potential enhancer regions of interest (e.g. H3K27ac or H3K4me1 ChIP-seq peaks), as well as nucleosome depleted regions (NDRs) (e.g. DNaseI hypersensitive sites, ATAC-seq, FAIRE-seq peaks) from relevant cell types to their experiment. Enhancer datasets should be placed in  the './external.data/enhancer/' directory, while NDR datasets should be placed in './external.data/NDR/'. Both enhancer and NDR datasets should be tab-delimited, bed-like files with chromosome information in the first column, listed as 'chr#', the second column containing start positions for the peaks, and the third column containing the end positions. Other columns can be included but will not be considered in the TENET 2.0 analysis. Row and column names should not be included in the files. Enhancer and NDR datasets should be aligned to the human hg38 reference genome, as TENET 2.0 databases are based off that reference genome. Below shows an example enhancer/NDR dataset
 
 ```diff
 chr1	777850	778178
@@ -114,15 +114,16 @@ chr1	779553	780185
 chr1	817095	817495
 chr1	826649	826989
 chr1	827249	827622
-chr1	903779	905685
 
 ```
 
 ## TENET 2.0 Output and recommended functions:
 
-##### Recommended functions:
+We higly recommended to run TENET 2.0 on a high performance computing cluster as it requires large computer memory. We recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though users can choose. HypoGplus and HyperGplus analyses encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. All five steps should be run to identify key transcriptional regulators (e.g. transcription factors) and enhancers; steps 1-5 are vital for generating data, but step5 includes optional functions (i.e. table and histogram, scatterplot, genome browser track, enhancer probe:gene link state, survival, circos, topologically associating domain (TAD) and heatmap functions). Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) to find example output figures and tables.
 
-TENET 2.0 is a complex program, and we higly recommended to run it on a computing cluster. All five steps should ideally be run (steps 1-4 are vital for generating data, and step5 is recommended for basic parsing of said data) and we recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though HypoGplus and HyperGplus analyses are most likely to be relevant as these encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. For step 5 functions, it is recommended at the moment to run the histogram, survival, circos, TAD, and heatmap functions. 
+### Recommended functions:
+
+For step 5 functions, it is recommended at the moment to run the histogram, survival, circos, TAD, and heatmap functions. 
 
 ##### Histogram output:
 
