@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0 Vignettes
 
-#### Last updated: 9/3/2020
+#### Last updated: 9/4/2020
 
 ## TENET 2.0 Input Data Structures:
 
@@ -138,5 +138,19 @@ FOXM1|ENSG00000111206	845	FOXM1	ENSG00000111206
 TCF24|ENSG00000261787	843	TCF24	ENSG00000261787
 MYBL2|ENSG00000101057	840	MYBL2	ENSG00000101057
 SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
+
+```
+
+##### Survival output:
+
+Depending on user input, survival functions can output .tsv files containing in-depth survival information about the top n transcriptional regulators (as specified by the user) and the DNA methylation probes linked to any one of of these transcriptional regulators, as well as pdf files displaying the Kaplan-Meier survival curves for the given transcriptional regulators and their linked DNA methylation probes (if the user has selected this option). 
+
+```diff
+normal_sample_count	tumor_sample_count	normal_sample_count_missing	tumor_sample_count_missing	mean_normal_expression	mean_tumor_expression	normal_sample_with_clinical_count	tumor_sample_with_clinical_count	tumor_sample_with_clinical_NA_count	tumor_sample_with_clinical_low_count	tumor_sample_with_clinical_intermediate_count	tumor_sample_with_clinical_high_count	mean_tumor_with_clinical_low_expression	mean_tumor_with_clinical_intermediate_expression	mean_tumor_with_clinical_high_expression	proportion_dead_in_low_expression	proportion_dead_in_high_expression	survival_direction_of_effect	survival_p_value
+CENPA	21	453	0	0	12.3325086264362	15.5937095161134	21	453	0	109	219	105	13.5368179935483	15.7439186181039	17.3927100762181	0.128440366972477	0.295238095238095	high_expression_low_survival	0.00334844476544105
+FOXM1	21	453	0	0	13.9098560452808	16.8571631413882	21	453	0	108	221	104	15.0514790151095	16.9052547479288	18.5686071113993	0.138888888888889	0.336538461538462	high_expression_low_survival	0.000478435670498101
+TCF24	21	453	0	0	4.80371882433539	9.08699422170773	21	453	0	108	216	109	2.26963702103498	10.4201103389594	13.3748235506378	0.185185185185185	0.284403669724771	high_expression_low_survival	0.340335620021469
+MYBL2	21	453	0	0	14.2238015665364	18.0201935332658	21	453	0	109	215	109	15.7221232722669	18.2055691603018	19.9664164551512	0.110091743119266	0.302752293577982	high_expression_low_survival	0.00209558525594733
+SOX2	21	453	0	0	13.3581835433044	15.9366883414569	21	453	0	109	214	110	12.0606586527843	16.3308839057577	19.0555956835861	0.211009174311927	0.181818181818182	low_expression_low_survival	0.0799571894772609
 
 ```
