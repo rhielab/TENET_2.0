@@ -1,6 +1,12 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 8/31/2020
+#### Last updated: 9/3/2020
+
+TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) for its usage. 
+
+# Citation
+Rhie SK et al. Identification of activated enhancers and linked transcription factors in breast, prostate, and kidney tumors by tracing enhancer networks using epigenetic traits. Epigenetics Chromatin 2016 Nov 9;9:50. PMID: 27833659
+Mullen DJ et al. TENET 2.0: identification of key transcriptional regulators and enhancers in lung adenocarcinoma. Plos Genetics 2020 In Press
 
 ## 1.TENET 2.0 Installation
 
