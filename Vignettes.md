@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0 Vignettes
 
-#### Last updated: 8/31/2020
+#### Last updated: 9/3/2020
 
 ## TENET 2.0 Input Data Structures:
 
@@ -119,7 +119,7 @@ chr1	827249	827622
 
 ## TENET 2.0 Output and recommended functions:
 
-We higly recommended to run TENET 2.0 on a high performance computing cluster as it requires large computer memory. We recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though users can choose. HypoGplus and HyperGplus analyses encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. All five steps should be run to identify key transcriptional regulators (e.g. transcription factors) and enhancers; steps 1-5 are vital for generating data, but step5 includes optional functions (i.e. table and histogram, scatterplot, genome browser track, enhancer probe:gene link state, survival, circos, topologically associating domain (TAD) and heatmap functions). Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) to find example output figures and tables.
+We higly recommended to run TENET 2.0 on a high performance computing cluster as it requires large computer memory. We recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though users can choose. HypoGplus and HyperGplus analyses encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. All five steps should be run to identify key transcriptional regulators (e.g. transcription factors) and enhancers; steps 1-5 are vital for generating data, but step 5 includes optional functions (i.e. table and histogram, scatterplot, genome browser track, enhancer probe:gene link state, survival, circos, topologically associating domain (TAD) and heatmap functions). Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) to find example output figures and tables.
 
 ### Recommended functions:
 
@@ -127,9 +127,9 @@ For step 5 functions, it is recommended at the moment to run the histogram, surv
 
 ##### Histogram output:
 
-Histogram functions output a variety of both .txt and .pdf files containing summarized information about the number of links to relevant transcriptional regulators. The .txt files contain the total number of relevant linked DNA methylation probes to relevant transcription factors organized from the regulators with the largest number of links to the smallest. The .pdf files take the information from the corresponding .txt files and display that information in the form of a heatmap, showing a given number of links on the x-axis, and the number of regulators with that number of links on the y-axis. For complete information about all links to all transcriptional regulators, look at the 'links.all.tf.freq' list and historgram.
+Histogram functions output a variety of both .txt and .pdf files containing summarized information about the number of links to relevant transcriptional regulators. The .txt files contain the total number of relevant linked DNA methylation probes to relevant transcription factors organized from the regulators with the largest number of links to the smallest. The .pdf files take the information from the corresponding .txt files and display that information in the form of a histogram, showing a given number of links on the x-axis, and the number of regulators with that number of links on the y-axis. For complete information about all links to identified key transcriptional regulators (e.g. transcription factors), look at the 'links.all.tf.freq' list and historgram. The cis links indicate ones located in the same chromosome ('links.cis.tf.freq') and the trans links indicate ones located in the different chromosomes ('links.trans.tf.freq').
 
-This function is a prerequisite for several other important TENET functions in the step5 analyses including the survival, circos, TAD, and heatmap functions. 
+This function is a prerequisite for several other important TENET functions in the step 5 analyses including the survival, circos, TAD, and heatmap functions. 
 
 ```diff
 gene.nameID	Freq	geneSymbol	geneID
