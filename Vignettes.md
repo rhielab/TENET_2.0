@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0 Vignettes
 
-#### Last updated: 9/4/2020
+#### Last updated: 9/10/2020
 
 ## TENET 2.0 Input Data Structures:
 
@@ -114,6 +114,19 @@ chr1	779553	780185
 chr1	817095	817495
 chr1	826649	826989
 chr1	827249	827622
+
+```
+
+##### Genes of interest files:
+
+For simple scatterplot functions, users have the option to include a genes of interest file to specify additional transcriptional regulators they would like to have scatterplots generated for. This file should contain "genes_of_interest" in the name (such as 'genes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list either the gene names or their ensembl IDs out in a single column, with one gene listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for genes if they do not have any links to them (so scatterplots will not be created if the genes are listed incorrectly, are not accepted human transcriptional factors, or do not have any probes linked to them). 
+
+```diff
+ENSG00000197472
+ENSG00000179774
+ENSG00000152192
+ENSG00000129173
+ENSG00000204366
 
 ```
 
