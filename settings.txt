@@ -70,11 +70,13 @@ hyperGposHistogram=T
 hyperGnegHistogram=T
 histcol=c("red")
 
-# simple scatterplot
+# simple scatterplot *rebuilt*
 hypoGposScatter=F
 hypoGnegScatter=F
 hyperGposScatter=F
 hyperGnegScatter=F
+
+scatterplot_top_n_genes=5
 
 # genome browser track
 hypoGposTracks=F
