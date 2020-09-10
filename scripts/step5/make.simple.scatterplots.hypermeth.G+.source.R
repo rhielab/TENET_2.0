@@ -269,7 +269,7 @@ scatterplot_function <- function(CpGs_list, gene_ENSG){
       ggtitle(
         paste(
           gene_name,
-          ' expression vs.\n',
+          ' gene expression vs.\n',
           CpG_name_placeholder,
           ' DNA methylation',
           sep=''
@@ -285,7 +285,7 @@ scatterplot_function <- function(CpGs_list, gene_ENSG){
       xlab(
         paste(
           gene_name,
-          'expression',
+          'gene expression',
           sep=' '
         )
       ) + 
