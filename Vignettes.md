@@ -117,7 +117,7 @@ chr1	827249	827622
 
 ```
 
-##### Genes of interest files:
+##### Genes of interest file:
 
 For simple scatterplot functions, users have the option to include a genes of interest file to specify additional transcriptional regulators they would like to have scatterplots generated for. This file should contain "genes_of_interest" in the name (such as 'genes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list either the gene names or their ensembl IDs out in a single column, with one gene listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for genes if they do not have any links to them (so scatterplots will not be created if the genes are listed incorrectly, are not accepted human transcriptional factors, or do not have any probes linked to them). 
 
@@ -136,7 +136,7 @@ We higly recommended to run TENET 2.0 on a high performance computing cluster as
 
 ### Recommended functions:
 
-For step 5 functions, it is recommended at the moment to run the histogram, survival, circos, TAD, and heatmap functions. 
+For step 5 functions, it is recommended at the moment to run the histogram, scatterplot, survival, circos, TAD, and heatmap functions. 
 
 ##### Histogram output:
 
@@ -153,6 +153,10 @@ MYBL2|ENSG00000101057	840	MYBL2	ENSG00000101057
 SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
 
 ```
+
+##### Simple scatterplot output:
+
+Scatterplot functions output .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). Scatterplots can be generated for the top n transcriptional regulators (as specified by the user), as well as user input genes as specified by the genes of interest file (see above). 
 
 ##### Survival output:
 
