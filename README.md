@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 9/3/2020
+#### Last updated: 9/10/2020
 
 TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) for its usage. 
 
@@ -282,24 +282,27 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	Determine the color of histograms you generate (e.g. for red, histcol=c("red"), for blue, histcol=c("blue"))
 
 ###### hypoGposScatter
-	T: Make simple scatterplots for hypomethylated enhancers to genes positively linked (hypoGpos)
+	T: Make scatterplots displaying the expression of (number specified by the scatterplot_top_n_genes parameter) transcriptional regulators to the methylation level of all positively-linked hypomethylated enhancers (hypoGpos). Allows users to also include transcriptional regulators as listed in a file containing the name 'genes_of_interest' placed in ./external.data/otherinfo/ 
 	
-	F: Don't generate simple scatterplots for hypoGpos
+	F: top transcriptional regulators and postively-linked hypomethylated enhancers or those specified by the user
 
 ###### hypoGnegScatter
-	T: Make simple scatterplots for hypomethylated enhancer to genes negatively linked (hypoGneg)
+	T: Make scatterplots displaying the expression of (number specified by the scatterplot_top_n_genes parameter) transcriptional regulators to the methylation level of all negatively-linked hypomethylated enhancers (hypoGneg). Allows users to also include transcriptional regulators as listed in a file containing the name 'genes_of_interest' placed in ./external.data/otherinfo/ 
 	
-	F: Don't generate simple scatterplots for hypoGneg
+	F: top transcriptional regulators and negatively-linked hypomethylated enhancers or those specified by the user
 
 ###### hyperGposScatter
-	T: Make simple scatterplots for hypermethylated enhancers to genes positively linked (hyperGpos)
+	T: Make scatterplots displaying the expression of (number specified by the scatterplot_top_n_genes parameter) transcriptional regulators to the methylation level of all positively-linked hypermethylated enhancers (hyperGpos). Allows users to also include transcriptional regulators as listed in a file containing the name 'genes_of_interest' placed in ./external.data/otherinfo/ 
 	
-	F: Don't generate simple scatterplots for hyperGpos
+	F: top transcriptional regulators and postively-linked hypermethylated enhancers or those specified by the user
 
 ###### hyperGnegScatter
-	T: Make simple scatterplots for hypermethylated enhancers to genes negatively linked (hyperGneg)
+	T: Make scatterplots displaying the expression of (number specified by the scatterplot_top_n_genes parameter) transcriptional regulators to the methylation level of all negatively-linked hypermethylated enhancers (hyperGneg). Allows users to also include transcriptional regulators as listed in a file containing the name 'genes_of_interest' placed in ./external.data/otherinfo/ 
 	
-	F: Don't generate simple scatterplots for hyperGneg
+	F: top transcriptional regulators and negatively-linked hypermethylated enhancers or those specified by the user
+	
+###### scatterplot_top_n_genes
+	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create scatterplots plots for the top n transcriptional regulators to linked probes. 
 
 ###### hypoGposTracks
 	T: Make genome browser tracks for hypomethylated enhancer to genes positively linked (hypoGpos)
