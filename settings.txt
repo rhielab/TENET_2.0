@@ -97,7 +97,6 @@ hyperGposCScatter=F
 hyperGnegCScatter=F
 
 ## step5 specific dataset functions ##
-makeScatter4gene=F
 makeScatter4probe=F
 
 # survival *NEW*
