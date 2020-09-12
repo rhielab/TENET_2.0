@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 9/10/2020
+#### Last updated: 9/11/2020
 
 TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) for its usage. 
 
@@ -344,12 +344,7 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	
 	F: Don't generate complex scatterplots for hyperGneg
 
-###### makeScatter4gene
-	T: make simple scatterplots for the gene you selected in ./external.data/otherinfo - please make sure you put the list of genes with the correct file names (e.g. for hypomethylated enhancer to genes positively linked, "hypo.G+.gene.txt", for hypermethylated enhancer to genes negatively lnked, "hyper.G-.gene.txt")
-	
-	F: don't generate simple scatterplots for the gene you selected in ./external.data/otherinfo
-
-###### makeScatter4gene
+###### makeScatter4probe
 	T: Make simple scatterplots for the enhancer probes you selected in ./external.data/otherinfo - please make sure you put the list of probes with the correct file names (e.g. for hypomethylated enhancer to probes positively linked, "hypo.G+.probe.txt", for hypermethylated enhancer to probes negatively lnked, "hyper.G-.probe.txt")
 	
 	F: Don't generate simple scatterplots for the probes you selected in ./external.data/otherinfo
