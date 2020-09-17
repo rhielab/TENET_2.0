@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 9/14/2020
+#### Last updated: 9/17/2020
 
 TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) for its usage. 
 
@@ -345,9 +345,9 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	F: Don't generate complex scatterplots for hyperGneg
 
 ###### makeScatter4probe
-	T: Make simple scatterplots for the enhancer probes you selected in ./external.data/otherinfo - please make sure you put the list of probes with the correct file names (e.g. for hypomethylated enhancer to probes positively linked, "hypo.G+.probe.txt", for hypermethylated enhancer to probes negatively lnked, "hyper.G-.probe.txt")
+	T: Make simple scatterplots for the enhancer probes users have selected and listed in a file containing the name 'probes_of_interest' placed in ./external.data/otherinfo/ 
 	
-	F: Don't generate simple scatterplots for the probes you selected in ./external.data/otherinfo
+	F: Don't generate simple scatterplots for the probes specified by the user in ./external.data/otherinfo
 
 ###### hypoGposSurvival
 	T: Make Kaplan-Meier survival curves for (number specified by the survival_top_n_genes parameter) transcriptional regulators and their nominally-significant (uncorrected p<0.05) linked hypomethylated enhancers (hypoGpos) using percentile cutoffs determined by high_thresh and low_thresh parameters, respectively. Note: Using this requires that hypoGposHistogram is also set to "T"
