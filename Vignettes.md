@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0 Vignettes
 
-#### Last updated: 9/10/2020
+#### Last updated: 9/17/2020
 
 ## TENET 2.0 Input Data Structures:
 
@@ -130,6 +130,19 @@ ENSG00000204366
 
 ```
 
+##### Probes of interest file:
+
+For makeScatter4probe function, users have the option to include a probes of interest file to specify specific probes they would like to have scatterplots generated for. This file should contain "probes_of_interest" in the name (such as 'probes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list the DNA methylation probes on the Illumina HumanMethylation450K beadchip array in a single column, with one probe listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for probes if they do not have any links to them (so scatterplots will not be created if the probes are listed incorrectly, are not included on the array, or do not have any transcriptional regulators linked to them). 
+
+```diff
+cg00068377
+cg02202315
+cg04855678
+cg13873387
+cg22953687
+
+```
+
 ## TENET 2.0 Output and recommended functions:
 
 We higly recommended to run TENET 2.0 on a high performance computing cluster as it requires large computer memory. We recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though users can choose. HypoGplus and HyperGplus analyses encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. All five steps should be run to identify key transcriptional regulators (e.g. transcription factors) and enhancers; steps 1-5 are vital for generating data, but step 5 includes optional functions (i.e. table and histogram, scatterplot, genome browser track, enhancer probe:gene link state, survival, circos, topologically associating domain (TAD) and heatmap functions). Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) to find example output figures and tables.
@@ -157,6 +170,10 @@ SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
 ##### Simple scatterplot output:
 
 Scatterplot functions output .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). Scatterplots can be generated for the top n transcriptional regulators (as specified by the user), as well as user input genes as specified by the genes of interest file (see above). 
+
+##### MakeScatter4probe
+
+This function is optional if the user has enhancer probes of particular interest and has supplied them in the Probes of interest (see above). Like the simple scatterplot functions, this function outputs .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples).
 
 ##### Survival output:
 
