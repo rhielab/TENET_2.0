@@ -173,9 +173,11 @@ SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
 
 Scatterplot functions output .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). Scatterplots can be generated for the top n transcriptional regulators (as specified by the user), as well as user input genes as specified by the genes of interest file (see above). 
 
+![Example scatterplot output](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/scatterplot_example.pdf?raw=true)
+
 ##### MakeScatter4probe
 
-This function is optional if the user has enhancer probes of particular interest and has supplied them in the Probes of interest (see above). Like the simple scatterplot functions, this function outputs .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples).
+This function is optional if the user has enhancer probes of particular interest and has supplied them in the Probes of interest (see above). Like the simple scatterplot functions, this function outputs .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). See above for example of output for this function. 
 
 ##### Survival output:
 
@@ -191,9 +193,15 @@ SOX2	21	453	0	0	13.3581835433044	15.9366883414569	21	453	0	109	214	110	12.060658
 
 ```
 
+![Example gene expression survival plot output](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/gene_expression_survival_example.pdf?raw=true)
+
+![Example DNA methylation survival plot output](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/DNA_methylation_probe_survival_example.pdf?raw=true)
+
 ##### Circos output:
 
 Circos functions output .html files that contain circos plots demonstrating the links from the top transcriptional regulators (as specified by the user) to their linked DNA methylation probes using the BioCircos package. Currently the links are generated in red, and the plots can be saved as .pdfs by the user by opening the html files and printing the page that opens using the Print -> save as .pdf options
+
+![Example circos plot output](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/circos_example.pdf?raw=true)
 
 ##### TAD output:
 
@@ -202,3 +210,5 @@ TAD functions output .tsv files that contain TAD information for all unique DNA 
 ##### Heatmap output:
 
 Heatmap functions output .pdf files displaying a heatmap with samples in the columns and each unique DNA methylation probes linked to the top transcriptional regulators (as specified by the user). Above the heatmap bars displaying relative expression of each of top transcriptional regulator genes (as specified by the user) are shown (scaled using the function: [X - Xmin] /[Xmax - Xmin], with 0 expression values set to the minimum, non-zero value). Heatmaps are plotted using the heatmap.3 function with euclidean distance and Ward.D2 function for clustering. 
+
+![Example heatmap output](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/heatmap_example.pdf?raw=true)
