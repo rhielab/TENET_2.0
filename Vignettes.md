@@ -167,7 +167,7 @@ SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
 
 ```
 
-![alt text](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/histogram_example.pdf?raw=true)
+![Example histogram output](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/histogram_example.pdf?raw=true)
 
 ##### Simple scatterplot output:
 
