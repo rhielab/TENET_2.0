@@ -169,6 +169,8 @@ SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
 
 ![Example histogram output](https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/histogram_example.png =504x504)
 
+<img src="https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/histogram_example.png" alt="Example histogram output" width="504"/>
+
 ##### Simple scatterplot output:
 
 Scatterplot functions output .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). Scatterplots can be generated for the top n transcriptional regulators (as specified by the user), as well as user input genes as specified by the genes of interest file (see above). 
