@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 9/17/2020
+#### Last updated: 9/27/2020
 
 TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) for its usage. 
 
@@ -305,25 +305,28 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create scatterplots plots for the top n transcriptional regulators to linked probes. 
 
 ###### hypoGposTracks
-	T: Make genome browser tracks for hypomethylated enhancer to genes positively linked (hypoGpos)
+	T: Make UCSC genome browser tracks for (number specified by the track_top_n_genes parameter) transcriptional regulators and their linked hypomethylated enhancers (hypoGpos)
 	
-	F: Don't generate genome browser tracks for hypoGpos
+	F: Don't generate genome browser tracks for top transcriptional regulators and their linked hypomethylated enhancers
 
-###### hypoGnegStates
-	T: Make genome browser tracks for hypomethylated enhancers to genes negatively linked (hypoGneg)
+###### hypoGnegTracks
+	T: Make UCSC genome browser tracks for (number specified by the track_top_n_genes parameter) transcriptional regulators and their negatively-linked hypomethylated enhancers (hypoGneg)
 	
-	F: Don't generate genome browser tracks for hypoGneg
+	F: Don't generate genome browser tracks for top transcriptional regulators and their negatively-linked hypomethylated enhancers
 
-###### hyperGposStates
-	T: Make genome browser tracks for hypermethylated enhancers to genes positively linked (hyperGpos)
+###### hyperGposTracks
+	T: Make UCSC genome browser tracks for (number specified by the track_top_n_genes parameter) transcriptional regulators and their linked hypermethylated enhancers (hyperGneg)
 	
-	F: Don't generate genome browser tracks for hyperGpos
+	F: Don't generate genome browser tracks for top transcriptional regulators and their linked hypermethylated enhancers
 
-###### hyperGnegStates
-	T: Make genome browser tracks for hypermethylated enhancers to genes negatively linked (hyperGneg)
+###### hyperGnegTracks
+	T: Make UCSC genome browser tracks for (number specified by the track_top_n_genes parameter) transcriptional regulators and their negatively-linked hypermethylated enhancers (hyperGneg)
 	
-	F: Don't generate genome browser tracks for hyperGneg
-
+	F: Don't generate genome browser tracks for top transcriptional regulators and their negatively-linked hypermethylated enhancers
+	
+###### track_top_n_genes
+	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create UCSC genome browser tracks for above
+	
 ###### hypoGposCScatter
 	T: Make complex scatterplots for hypomethylated enhancers to genes positively linked (hypoGpos) using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
 
