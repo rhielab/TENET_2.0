@@ -78,11 +78,13 @@ hyperGnegScatter=F
 
 scatterplot_top_n_genes=5
 
-# genome browser track
+# genome browser track *rebuilt*
 hypoGposTracks=F
 hypoGnegTracks=F
 hyperGposTracks=F
 hyperGnegTracks=F
+
+track_top_n_genes=5
 
 # enhancer probe:gene links state
 hypoGposStates=F

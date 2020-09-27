@@ -469,7 +469,7 @@ if [[ $hyperGnegTracks == "T" ]];
 then
 Rscript ../scripts/step5/make.ucsc.bed.file.for.hypermeth.G-.source.R
 fi
-hypoGposStates=$(head -n 88 ../settings.txt | tail -n 1)
+hypoGposStates=$(head -n 90 ../settings.txt | tail -n 1)
 eval $hypoGposStates
 if [[ $hypoGposStates == "T" ]];
 then
@@ -483,7 +483,7 @@ then echo "hypoGpos states of samples are annotated";
 fi
 cd ..
 fi
-hypoGnegStates=$(head -n 89 ../settings.txt | tail -n 1)
+hypoGnegStates=$(head -n 91 ../settings.txt | tail -n 1)
 eval $hypoGnegStates
 if [[ $hypoGnegStates == "T" ]];
 then
@@ -497,7 +497,7 @@ then echo "hypoGneg states of samples are annotated";
 fi
 cd ..
 fi
-hyperGposStates=$(head -n 90 ../settings.txt | tail -n 1)
+hyperGposStates=$(head -n 92 ../settings.txt | tail -n 1)
 eval $hyperGposStates
 if [[ $hyperGposStates == "T" ]];
 then
@@ -511,7 +511,7 @@ then echo "hyperGpos states of samples are annotated";
 fi
 cd ..
 fi
-hyperGnegStates=$(head -n 91 ../settings.txt | tail -n 1)
+hyperGnegStates=$(head -n 93 ../settings.txt | tail -n 1)
 eval $hyperGnegStates
 if [[ $hyperGnegStates == "T" ]];
 then
@@ -525,35 +525,35 @@ then echo "hyperGneg states of samples are annotated";
 fi
 cd ..
 fi
-makeScatter4probe=$(head -n 100 ../settings.txt | tail -n 1)
+makeScatter4probe=$(head -n 102 ../settings.txt | tail -n 1)
 eval $makeScatter4probe
 if [[ $makeScatter4probe == "T" ]];
 then
 Rscript ../scripts/step5/make.simple.scatterplots.select.probe.R
 fi
 # Survival Analysis #
-hypoGposSurvival=$(head -n 103 ../settings.txt | tail -n 1)
+hypoGposSurvival=$(head -n 105 ../settings.txt | tail -n 1)
 eval $hypoGposSurvival
 if [[ $hypoGposSurvival == "T" ]];
 then
 mkdir "hypo.G+.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypometh.G+.R
 fi
-hypoGnegSurvival=$(head -n 104 ../settings.txt | tail -n 1)
+hypoGnegSurvival=$(head -n 106 ../settings.txt | tail -n 1)
 eval $hypoGnegSurvival
 if [[ $hypoGnegSurvival == "T" ]];
 then
 mkdir "hypo.G-.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypometh.G-.R
 fi
-hyperGposSurvival=$(head -n 105 ../settings.txt | tail -n 1)
+hyperGposSurvival=$(head -n 107 ../settings.txt | tail -n 1)
 eval $hyperGposSurvival
 if [[ $hyperGposSurvival == "T" ]];
 then
 mkdir "hyper.G+.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypermeth.G+.R
 fi
-hyperGnegSurvival=$(head -n 106 ../settings.txt | tail -n 1)
+hyperGnegSurvival=$(head -n 108 ../settings.txt | tail -n 1)
 eval $hyperGnegSurvival
 if [[ $hyperGnegSurvival == "T" ]];
 then
@@ -561,28 +561,28 @@ mkdir "hyper.G-.output.survival"
 Rscript ../scripts/step5/make.survival.plots.hypermeth.G-.R
 fi
 # circos plots #
-hypoGposCircos=$(head -n 115 ../settings.txt | tail -n 1)
+hypoGposCircos=$(head -n 117 ../settings.txt | tail -n 1)
 eval $hypoGposCircos
 if [[ $hypoGposCircos == "T" ]];
 then
 mkdir "hypo.G+.output.circos"
 Rscript ../scripts/step5/make.circos.plots.hypometh.G+.R
 fi
-hypoGnegCircos=$(head -n 116 ../settings.txt | tail -n 1)
+hypoGnegCircos=$(head -n 118 ../settings.txt | tail -n 1)
 eval $hypoGnegCircos
 if [[ $hypoGnegCircos == "T" ]];
 then
 mkdir "hypo.G-.output.circos"
 Rscript ../scripts/step5/make.circos.plots.hypometh.G-.R
 fi
-hyperGposCircos=$(head -n 117 ../settings.txt | tail -n 1)
+hyperGposCircos=$(head -n 119 ../settings.txt | tail -n 1)
 eval $hyperGposCircos
 if [[ $hyperGposCircos == "T" ]];
 then
 mkdir "hyper.G+.output.circos"
 Rscript ../scripts/step5/make.circos.plots.hypermeth.G+.R
 fi
-hyperGnegCircos=$(head -n 118 ../settings.txt | tail -n 1)
+hyperGnegCircos=$(head -n 120 ../settings.txt | tail -n 1)
 eval $hyperGnegCircos
 if [[ $hyperGnegCircos == "T" ]];
 then
@@ -590,28 +590,28 @@ mkdir "hyper.G-.output.circos"
 Rscript ../scripts/step5/make.circos.plots.hypermeth.G-.R
 fi
 # TAD analysis #
-hypoGposTAD=$(head -n 123 ../settings.txt | tail -n 1)
+hypoGposTAD=$(head -n 125 ../settings.txt | tail -n 1)
 eval $hypoGposTAD
 if [[ $hypoGposTAD == "T" ]];
 then
 mkdir "hypo.G+.output.TAD"
 Rscript ../scripts/step5/make.TAD.tables.hypometh.G+.R
 fi
-hypoGnegTAD=$(head -n 124 ../settings.txt | tail -n 1)
+hypoGnegTAD=$(head -n 126 ../settings.txt | tail -n 1)
 eval $hypoGnegTAD
 if [[ $hypoGnegTAD == "T" ]];
 then
 mkdir "hypo.G-.output.TAD"
 Rscript ../scripts/step5/make.TAD.tables.hypometh.G-.R
 fi
-hyperGposTAD=$(head -n 125 ../settings.txt | tail -n 1)
+hyperGposTAD=$(head -n 127 ../settings.txt | tail -n 1)
 eval $hyperGposTAD
 if [[ $hyperGposTAD == "T" ]];
 then
 mkdir "hyper.G+.output.TAD"
 Rscript ../scripts/step5/make.TAD.tables.hypermeth.G+.R
 fi
-hyperGnegTAD=$(head -n 126 ../settings.txt | tail -n 1)
+hyperGnegTAD=$(head -n 128 ../settings.txt | tail -n 1)
 eval $hyperGnegTAD
 if [[ $hyperGnegTAD == "T" ]];
 then
@@ -619,28 +619,28 @@ mkdir "hyper.G-.output.TAD"
 Rscript ../scripts/step5/make.TAD.tables.hypermeth.G-.R
 fi
 # Methylation heat map analysis #
-hypoGposMetHeatmap=$(head -n 131 ../settings.txt | tail -n 1)
+hypoGposMetHeatmap=$(head -n 133 ../settings.txt | tail -n 1)
 eval $hypoGposMetHeatmap
 if [[ $hypoGposMetHeatmap == "T" ]];
 then
 mkdir "hypo.G+.output.probe.heatmap"
 Rscript ../scripts/step5/make.met.heatmap.hypometh.G+.R
 fi
-hypoGnegMetHeatmap=$(head -n 132 ../settings.txt | tail -n 1)
+hypoGnegMetHeatmap=$(head -n 134 ../settings.txt | tail -n 1)
 eval $hypoGnegMetHeatmap
 if [[ $hypoGnegMetHeatmap == "T" ]];
 then
 mkdir "hypo.G-.output.probe.heatmap"
 Rscript ../scripts/step5/make.met.heatmap.hypometh.G-.R
 fi
-hyperGposMetHeatmap=$(head -n 133 ../settings.txt | tail -n 1)
+hyperGposMetHeatmap=$(head -n 135 ../settings.txt | tail -n 1)
 eval $hyperGposMetHeatmap
 if [[ $hyperGposMetHeatmap == "T" ]];
 then
 mkdir "hyper.G+.output.probe.heatmap"
 Rscript ../scripts/step5/make.met.heatmap.hypermeth.G+.R
 fi
-hyperGnegMetHeatmap=$(head -n 134 ../settings.txt | tail -n 1)
+hyperGnegMetHeatmap=$(head -n 136 ../settings.txt | tail -n 1)
 eval $hyperGnegMetHeatmap
 if [[ $hyperGnegMetHeatmap == "T" ]];
 then
@@ -656,25 +656,25 @@ CNVdataset=$(head -n 40 ../settings.txt | tail -n 1)
 eval $CNVdataset
 if [[ $purityinfo == "T" && $SMdataset == "T" && $CNVdataset == "T" ]];
 then
-hypoGposCScatter=$(head -n 92 ../settings.txt | tail -n 1)
+hypoGposCScatter=$(head -n 96 ../settings.txt | tail -n 1)
 eval $hypoGposCScatter
 if [[ $hypoGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.complex.scatterplots.hypometh.G+.source.R
 fi
-hypoGnegCScatter=$(head -n 93 ../settings.txt | tail -n 1)
+hypoGnegCScatter=$(head -n 97 ../settings.txt | tail -n 1)
 eval $hypoGnegCScatter
 if [[ $hypoGnegCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.complex.scatterplots.hypometh.G-.source.R
 fi
-hyperGposCScatter=$(head -n 94 ../settings.txt | tail -n 1)
+hyperGposCScatter=$(head -n 98 ../settings.txt | tail -n 1)
 eval $hyperGposCScatter
 if [[ $hyperGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.complex.scatterplots.hypermeth.G+.source.R
 fi
-hyperGnegCScatter=$(head -n 95 ../settings.txt | tail -n 1)
+hyperGnegCScatter=$(head -n 99 ../settings.txt | tail -n 1)
 eval $hyperGnegCScatter
 if [[ $hyperGnegCScatter == "T" ]];
 then
@@ -683,25 +683,25 @@ fi
 fi
 if [[ $purityinfo == "T" && $SMdataset == "F" && $CNVdataset == "F" ]];
 then
-hypoGposCScatter=$(head -n 92 ../settings.txt | tail -n 1)
+hypoGposCScatter=$(head -n 96 ../settings.txt | tail -n 1)
 eval $hypoGposCScatter
 if [[ $hypoGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.purity.scatterplots.hypometh.G+.source.R
 fi
-hypoGnegCScatter=$(head -n 93 ../settings.txt | tail -n 1)
+hypoGnegCScatter=$(head -n 97 ../settings.txt | tail -n 1)
 eval $hypoGnegCScatter
 if [[ $hypoGnegCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.purity.scatterplots.hypometh.G-.source.R
 fi
-hyperGposCScatter=$(head -n 94 ../settings.txt | tail -n 1)
+hyperGposCScatter=$(head -n 98 ../settings.txt | tail -n 1)
 eval $hyperGposCScatter
 if [[ $hyperGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.purity.scatterplots.hypermeth.G+.source.R
 fi
-hyperGnegCScatter=$(head -n 95 ../settings.txt | tail -n 1)
+hyperGnegCScatter=$(head -n 99 ../settings.txt | tail -n 1)
 eval $hyperGnegCScatter
 if [[ $hyperGnegCScatter == "T" ]];
 then
@@ -710,25 +710,25 @@ fi
 fi
 if [[ $purityinfo == "F" && $SMdataset == "T" && $CNVdataset == "F" ]];
 then
-hypoGposCScatter=$(head -n 92 ../settings.txt | tail -n 1)
+hypoGposCScatter=$(head -n 96 ../settings.txt | tail -n 1)
 eval $hypoGposCScatter
 if [[ $hypoGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.SM.scatterplots.hypometh.G+.source.R
 fi
-hypoGnegCScatter=$(head -n 93 ../settings.txt | tail -n 1)
+hypoGnegCScatter=$(head -n 97 ../settings.txt | tail -n 1)
 eval $hypoGnegCScatter
 if [[ $hypoGnegCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.SM.scatterplots.hypometh.G-.source.R
 fi
-hyperGposCScatter=$(head -n 94 ../settings.txt | tail -n 1)
+hyperGposCScatter=$(head -n 98 ../settings.txt | tail -n 1)
 eval $hyperGposCScatter
 if [[ $hyperGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.SM.scatterplots.hypermeth.G+.source.R
 fi
-hyperGnegCScatter=$(head -n 95 ../settings.txt | tail -n 1)
+hyperGnegCScatter=$(head -n 99 ../settings.txt | tail -n 1)
 eval $hyperGnegCScatter
 if [[ $hyperGnegCScatter == "T" ]];
 then
@@ -737,25 +737,25 @@ fi
 fi
 if [[ $purityinfo == "F" && $SMdataset == "F" && $CNVdataset == "T" ]];
 then
-hypoGposCScatter=$(head -n 92 ../settings.txt | tail -n 1)
+hypoGposCScatter=$(head -n 96 ../settings.txt | tail -n 1)
 eval $hypoGposCScatter
 if [[ $hypoGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.CNV.scatterplots.hypometh.G+.source.R
 fi
-hypoGnegCScatter=$(head -n 93 ../settings.txt | tail -n 1)
+hypoGnegCScatter=$(head -n 97 ../settings.txt | tail -n 1)
 eval $hypoGnegCScatter
 if [[ $hypoGnegCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.CNV.scatterplots.hypometh.G-.source.R
 fi
-hyperGposCScatter=$(head -n 94 ../settings.txt | tail -n 1)
+hyperGposCScatter=$(head -n 98 ../settings.txt | tail -n 1)
 eval $hyperGposCScatter
 if [[ $hyperGposCScatter == "T" ]];
 then
 Rscript ../scripts/step5/make.CNV.scatterplots.hypermeth.G+.source.R
 fi
-hyperGnegCScatter=$(head -n 95 ../settings.txt | tail -n 1)
+hyperGnegCScatter=$(head -n 99 ../settings.txt | tail -n 1)
 eval $hyperGnegCScatter
 if [[ $hyperGnegCScatter == "T" ]];
 then
@@ -764,28 +764,28 @@ fi
 fi
 if [[ $purityinfo == "F" && $SMdataset == "F" && $CNVdataset == "F" ]];
 then 
-hypoGposCScatter=$(head -n 92 ../settings.txt | tail -n 1)
+hypoGposCScatter=$(head -n 96 ../settings.txt | tail -n 1)
 eval $hypoGposCScatter
 if [[ $hypoGposCScatter == "T" ]];
 then
 echo "please load purity estimates or somatic mutation or CNV datasets to make complex scatterplots"
 echo "please make sure your parameters are correct in the settings"
 fi
-hypoGnegCScatter=$(head -n 93 ../settings.txt | tail -n 1)
+hypoGnegCScatter=$(head -n 97 ../settings.txt | tail -n 1)
 eval $hypoGnegCScatter
 if [[ $hypoGnegCScatter == "T" ]];
 then
 echo "please load purity estimates or somatic mutation or CNV datasets to make complex scatterplots"
 echo "please make sure your parameters are correct in the settings"
 fi
-hyperGnegCScatter=$(head -n 95 ../settings.txt | tail -n 1)
-eval $hyperGnegCScatter
-if [[ $hyperGnegCScatter == "T" ]];
+hyperGposCScatter=$(head -n 98 ../settings.txt | tail -n 1)
+eval $hyperGposCScatter
+if [[ $hyperGposCScatter == "T" ]];
 then
 echo "please load purity estimates or somatic mutation or CNV datasets to make complex scatterplots"
 echo "please make sure your parameters are correct in the settings"
 fi
-hyperGnegCScatter=$(head -n 95 ../settings.txt | tail -n 1)
+hyperGnegCScatter=$(head -n 99 ../settings.txt | tail -n 1)
 eval $hyperGnegCScatter
 if [[ $hyperGnegCScatter == "T" ]];
 then
