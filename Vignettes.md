@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0 Vignettes
 
-#### Last updated: 9/27/2020
+#### Last updated: 10/1/2020
 
 ## TENET 2.0 Input Data Structures:
 
@@ -174,7 +174,7 @@ SOX2|ENSG00000181449	713	SOX2	ENSG00000181449
 Genome browser track functions output interact files in .bed format showing interactions between the top n transcriptional regulators (as specified by the user) and their linked DNA methylation probes. These files can be uploaded by the user on the UCSC Genome Browser (https://genome.ucsc.edu/) for visualization on the hg38 human genome using the custom tracks option there. 
 
 ```diff
-track type=interact name="interact Example One" description="An interact file"
+track type=interact name="TENET2.0_Hypo.G+_interactions" description="TENET2.0 top TR to enhancer DNA methylation probe links" 
 chr2	26764289	26764289	ENSG00000115163_cg00019511_link	0	0	.	#0080FF	chr2	26764289	26764289	CENPA	.	chr14	100734951	100734952	cg00019511	.
 chr2	26764289	26764289	ENSG00000115163_cg00030432_link	0	0	.	#0080FF	chr2	26764289	26764289	CENPA	.	chr7	100431351	100431352	cg00030432	.
 chr2	26764289	26764289	ENSG00000115163_cg00071210_link	0	0	.	#0080FF	chr2	26764289	26764289	CENPA	.	chr6	148415806	148415807	cg00071210	.
@@ -182,6 +182,8 @@ chr2	26764289	26764289	ENSG00000115163_cg00073794_link	0	0	.	#0080FF	chr2	267642
 chr2	26764289	26764289	ENSG00000115163_cg00093522_link	0	0	.	#0080FF	chr2	26764289	26764289	CENPA	.	chr1	2320580	2320581	cg00093522	.
 
 ```
+
+<img src="https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/tracks_example.png" alt="Example UCSC genome browser track output" width="504"/>
 
 ##### Simple scatterplot output:
 
