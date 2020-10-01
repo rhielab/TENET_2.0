@@ -209,16 +209,18 @@ output_intersect_file <- data.frame(
   stringsAsFactors = FALSE
 )
 
-## Save the file out as a .bed file:
-write.table(
-  output_intersect_file,
-  file= paste(
-    './hyper.G-.output.tracks/',
-    'TR.enhancer.probe.links.hg38.bed',
-    sep=''
-  ),
-  row.names= FALSE,
-  col.names= FALSE,
-  quote= FALSE,
-  sep='\t'
+## Create text for the header line: 
+header_line_text <- "track type=interact name=\"TENET2.0_hyper.G-_interactions\" description=\"TENET2.0 top TR to enhancer DNA methylation probe links\""
+
+## Create a file name for the output bed file:
+bed_file_name <- paste(
+  './hyper.G-.output.tracks/',
+  'TR.enhancer.probe.links.hg38.bed',
+  sep=''
 )
+
+## Add the header line to the new bed file:
+cat(header_line_text, "\n", file = bed_file_name) 
+
+## Write the info to the file:
+write.table(output_intersect_file, file = bed_file_name, append = TRUE, row.names = FALSE, col.names = FALSE, quote= FALSE)
