@@ -225,13 +225,13 @@ heatmap.3(
   lmat= rbind( c(0,0,5), c(0,0,2), c(4,1,3), c(0,0,6)),
   lwid= c(0.1,0.02,2),
   lhei= c(0.4,0.6,2,0.001),
-  margins= c(0,0),
+  margins= c(2,2),
   col= matlab::jet.colors(200),
   trace= "none",
   key= FALSE,
   main= NULL,
-  ylab= NULL,
-  xlab= NULL
+  ylab= "Unique linked DNA methylation probes",
+  xlab= "Sample Data"
 )
 
 ## Close the plot:

@@ -230,8 +230,8 @@ heatmap.3(
   trace= "none",
   key= FALSE,
   main= NULL,
-  ylab= NULL,
-  xlab= NULL
+  ylab= "Unique linked DNA methylation probes",
+  xlab= "Sample Data"
 )
 
 ## Close the plot:
