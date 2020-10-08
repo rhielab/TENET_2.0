@@ -2,7 +2,7 @@
 
 #### Last updated: 9/27/2020
 
-TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) for its usage. 
+TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (PMID: 32925947) for its usage. 
 
 ## Citation
 Mullen DJ et al. TENET 2.0: identification of key transcriptional regulators and enhancers in lung adenocarcinoma. Plos Genetics 2020 16(9): e1009023. https://doi.org/10.1371/journal.pgen.1009023
