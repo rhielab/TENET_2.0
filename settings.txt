@@ -92,6 +92,8 @@ hypoGnegStates=F
 hyperGposStates=F
 hyperGnegStates=F
 
+states_top_n_genes=5
+
 # complex scatterplot
 hypoGposCScatter=F
 hypoGnegCScatter=F
