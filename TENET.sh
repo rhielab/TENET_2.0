@@ -478,7 +478,6 @@ cd ./hypo.G+.output.states
 allstates=$(wc -l *links.states.table.txt)
 allstatesc=$(echo $allstates | awk '{print $1}')
 if [[ $allstatesc > 0 ]];
-rm cg*states.txt;
 then echo "hypoGpos states of samples are annotated";
 fi
 cd ..
@@ -492,7 +491,6 @@ cd ./hypo.G-.output.states
 allstates=$(wc -l *links.states.table.txt)
 allstatesc=$(echo $allstates | awk '{print $1}')
 if [[ $allstatesc > 0 ]];
-rm cg*states.txt;
 then echo "hypoGneg states of samples are annotated";
 fi
 cd ..
@@ -506,7 +504,6 @@ cd ./hyper.G+.output.states
 allstates=$(wc -l *links.states.table.txt)
 allstatesc=$(echo $allstates | awk '{print $1}')
 if [[ $allstatesc > 0 ]];
-rm cg*states.txt;
 then echo "hyperGpos states of samples are annotated";
 fi
 cd ..
@@ -520,7 +517,6 @@ cd ./hyper.G-.output.states
 allstates=$(wc -l *links.states.table.txt)
 allstatesc=$(echo $allstates | awk '{print $1}')
 if [[ $allstatesc > 0 ]];
-rm cg*states.txt;
 then echo "hyperGneg states of samples are annotated";
 fi
 cd ..
