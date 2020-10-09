@@ -230,8 +230,8 @@ heatmap.3(
   trace= "none",
   key= FALSE,
   main= NULL,
-  ylab= "Unique linked DNA methylation probes",
-  xlab= "Sample Data"
+  ylab= "Enhancer probes linked to key transcriptional regulators",
+  xlab= "Samples"
 )
 
 ## Close the plot:
