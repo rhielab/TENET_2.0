@@ -338,7 +338,7 @@ heatmap.3 <- function(x,
     axis(4, iy, labels = labRow, las = 2, line = -0.5, tick = 0,
         cex.axis = cexRow)
     if (!is.null(ylab))
-        mtext(ylab, side = 4, line = margins[2] - 1.25)
+        mtext(ylab, side = 2, line = margins[2] - 1.25)
     if (!missing(add.expr))
         eval(substitute(add.expr))
     if (!missing(colsep))
