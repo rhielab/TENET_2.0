@@ -7,6 +7,9 @@ expDataT_subC=expDataT
 links=c("hyper.G-")
 LS=list.files("../step4/hyper.G-.output/", pattern="all.optimized.links.txt")
 x=read.delim(paste("../step4/hyper.G-.output/", LS[1], sep=""), header=T)
+ordered_TFs_by_link_count <- read.delim(file= paste("./hyper.G-.output.histogram/", prefix,".hyper.G-.links.all.tf.freq.txt",sep=''),stringsAsFactors = FALSE)
+top_gene_IDs <- ordered_TFs_by_link_count[1:states_top_n_genes,'geneID']
+x=x[which(x$geneID %in% top_gene_IDs),]
 metDataT_subC=ifelse(metDataT>hypercutoff,1,0)
 datM=t(metDataT_subC[match(x$probe, rownames(metDataT_subC)),])
 datE=t(expDataT_subC[match(x$geneID, rownames(expDataT_subC)),])
@@ -15,7 +18,7 @@ setwd("./hyper.G-.output.states")
 if(is.na(match("mean.expT", colnames(x)))==TRUE){
 getmeanexpT=function(geneID){
 mean(expDataT[as.character(geneID),], na.rm=T)}
-top=list(geneID=as.character(x$geneID))
+top=list(geneID=as.character(top_gene_IDs))
 x$mean.expT=mcmapply(getmeanexpT, top$geneID, mc.cores=cores)
 }
 for (i in 1:dim(x)[1]){
@@ -25,7 +28,6 @@ rownames(datc)=rownames(datM)
 datc$FIN=ifelse(datc$meth==1 & datc$exp.changed==1,1,0)
 colnames(datc)=c(as.character(x$probe[i]), as.character(x$geneID[i]), "exp.changed","FIN")
 write.table(datc, paste(x$probe[i], x$geneID[i], x$geneSymbol[i], prefix, links, "states.txt", sep="."), row.names=T, col.names=T, sep="\t", quote=F)
-print(i)
 }
 TUMOR_Call=matrix("NA", nrow=dim(metDataT)[2], ncol=dim(x)[1])
 rownames(TUMOR_Call)=rownames(datc)
@@ -39,4 +41,6 @@ LF$FIN
 TUMOR_Call=mcmapply(ID=ID,findState,mc.cores=cores)
 rownames(TUMOR_Call)=rownames(datc)
 write.table(TUMOR_Call, paste(prefix, links, "links.states.table.txt", sep="."), row.names=T, col.names=T, sep="\t", quote=F)
-# in order to remove NA - in vim change NA to 0 :%s/^INA/^I0/g
+# remove unnecessary files #
+notneed=dir(getwd(), pattern="states.txt$")
+file.remove(notneed)
