@@ -1,6 +1,3 @@
-## Load the matlab library:
-library(matlab)
-
 ## Create a directory to place information into:
 dir.create(
   './hyper.G-.output.tracks/'
@@ -160,15 +157,31 @@ intersect_df$CpG_end <- hg38_450k_probe_info[
 
 ## Now let's use the jetcolor function to set up a gradient of colors equal to
 ## the number of TRs analyzed and assign each TR a color:
-jet_color_numeric_color_grad <- matlab::jet.colors(track_top_n_genes)
+jet_color_numeric_color_grad <- rainbow(track_top_n_genes)
 
 names(jet_color_numeric_color_grad) <- top_gene_ids
 
 ### Now that we have the information, let's assemble the real intersect file:
 output_intersect_file <- data.frame(
   'chrom'= intersect_df$TR_chr,
-  'chromStart'= intersect_df$TR_start,
-  'chromEnd'= intersect_df$TR_end,
+  'chromStart'= ifelse(
+    intersect_df$TR_chr==intersect_df$CpG_chr,
+    ifelse(
+      (intersect_df$CpG_start < intersect_df$TR_start),
+      intersect_df$CpG_start,
+      intersect_df$TR_start
+    ),
+    intersect_df$TR_start-1
+  ),
+  'chromEnd'= ifelse(
+    intersect_df$TR_chr==intersect_df$CpG_chr,
+    ifelse(
+      (intersect_df$CpG_start < intersect_df$TR_start),
+      intersect_df$TR_start-1,
+      intersect_df$CpG_start
+    ),
+    intersect_df$TR_end
+  ),
   'name'= paste(
     intersect_df$TR_ID,
     intersect_df$CpG_ID,
@@ -187,11 +200,15 @@ output_intersect_file <- data.frame(
     '.',
     nrow(intersect_df)
   ),
-  'color'= jet_color_numeric_color_grad[
-    intersect_df$TR_ID
-  ],
+  'color'= substring(
+    jet_color_numeric_color_grad[
+      intersect_df$TR_ID
+    ],
+    1,
+    7
+  ),
   'sourceChrom'= intersect_df$TR_chr,
-  'sourceStart'= intersect_df$TR_start,
+  'sourceStart'= intersect_df$TR_start-1,
   'sourceEnd'= intersect_df$TR_end,
   'sourceName'= intersect_df$TR_name,
   'sourceStrand'= rep(
@@ -199,7 +216,7 @@ output_intersect_file <- data.frame(
     nrow(intersect_df)
   ),
   'targetChrom'= intersect_df$CpG_chr,
-  'targetStart'= intersect_df$CpG_start+1,
+  'targetStart'= intersect_df$CpG_start,
   'targetEnd'= intersect_df$CpG_end,
   'targetName'= intersect_df$CpG_ID,
   'targetStrand'= rep(
