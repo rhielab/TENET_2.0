@@ -185,6 +185,20 @@ chr2 26764288 26764290 ENSG00000115163_cg00093522_link 0 0 . #FF0000FF chr2 2676
 
 <img src="https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/tracks_example.png" alt="Example UCSC genome browser track output" width="504"/>
 
+##### States output:
+
+```diff
+  cg00002190.ENSG00000101057.MYBL2        cg00019511.ENSG00000111206.FOXM1        cg00019511.ENSG00000115163.CENPA    cg00019511.ENSG00000261787.TCF24        cg00022235.ENSG00000181449.SOX2 cg00030432.ENSG00000111206.FOXM1
+TCGA-05-4384-01A-01     0       0       0       0       0       0
+TCGA-05-4390-01A-02     0       0       0       0       0       0
+TCGA-05-4396-01A-21     0       0       0       0       0       0
+TCGA-05-4405-01A-21     0       0       0       0       0       0
+TCGA-05-4410-01A-21     0       0       0       0       0       0
+TCGA-05-4415-01A-22     0       1       1       1       0       0
+TCGA-05-4417-01A-22     0       0       0       0       0       0
+TCGA-05-4424-01A-22     0       0       0       0       0       0
+TCGA-05-4425-01A-01     0       0       0       0       0       0
+
 ##### Simple scatterplot output:
 
 Scatterplot functions output .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). Scatterplots can be generated for the top n transcriptional regulators (as specified by the user), as well as user input genes as specified by the genes of interest file (see above). 
