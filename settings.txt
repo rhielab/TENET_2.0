@@ -86,7 +86,7 @@ hyperGnegTracks=F
 
 track_top_n_genes=5
 
-# enhancer probe:gene links state
+# enhancer probe:gene links state *rebuilt*
 hypoGposStates=F
 hypoGnegStates=F
 hyperGposStates=F
