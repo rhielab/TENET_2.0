@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0 Vignettes
 
-#### Last updated: 10/8/2020
+#### Last updated: 10/12/2020
 
 ## TENET 2.0 Input Data Structures:
 
