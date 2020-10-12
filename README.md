@@ -1,6 +1,6 @@
 # TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
-#### Last updated: 9/27/2020
+#### Last updated: 10/12/2020
 
 TENET is developed to identify key transcriptional regulators such as transcription factors and enhancers linked to a specific cell type. Please see Rhie et al (PMID: 27833659) and Mullen et al (PMID: 32925947) for its usage. 
 
@@ -326,7 +326,27 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	
 ###### track_top_n_genes
 	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create UCSC genome browser tracks for above
+
+###### hypoGposStates
+	T: Make a table that lists the activity states of (number specified by the states_top_n_genes parameter) transcriptional regulators and their linked hypomethylated enhancers (hypoGpos)
 	
+	F: Don't generate the activity status table for top transcriptional regulators and their linked hypomethylated enhancers
+
+###### hyperGposStates
+	T: Make a table that lists the activity states of (number specified by the states_top_n_genes parameter) transcriptional regulators and their linked hypermethylated enhancers (hyperGpos)
+	
+	F: Don't generate the activity status table for top transcriptional regulators and their linked hypermethylated enhancers
+	
+###### hypoGnegStates
+	T: Make a table that lists the activity states of (number specified by the states_top_n_genes parameter) transcriptional regulators and their negatively-linked hypomethylated enhancers (hypoGneg)
+	
+	F: Don't generate the activity status table for top transcriptional regulators and their negatively-linked hypomethylated enhancers
+
+###### hyperGnegStates
+	T: Make a table that lists the activity states of (number specified by the states_top_n_genes parameter) transcriptional regulators and their negatively-linked hypermethylated enhancers (hyperGneg)
+	
+	F: Don't generate the activity status table for top transcriptional regulators and their negatively-linked hypermethylated enhancers
+
 ###### hypoGposCScatter
 	T: Make complex scatterplots for hypomethylated enhancers to genes positively linked (hypoGpos) using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
 
