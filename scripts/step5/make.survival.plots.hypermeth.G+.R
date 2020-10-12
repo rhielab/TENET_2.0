@@ -74,11 +74,6 @@ combined_rda_file <- list.files(
 ## If not, check to see if clinical data is included in the "clinical" folder
 load(combined_rda_file)
 
-# #### REMOVE THIS LATER:
-# load(
-#     "/Volumes/NO_NAME/TENET_paper_update/tenet_match.matched.dedup.luad.methylation.expression.dataset.rda",
-# )
-
 ## If data is loaded as clinical_data, rename it to clinical:
 if(exists('clinical_data')){
   
