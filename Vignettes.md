@@ -6,7 +6,7 @@
 
 ##### Gene Expression Datasets:
 
-Should contain two objects with expression data for normal samples (or control group) in one, and expression data for the tumor samples (or experimental group) in the other. These objects can either be text files or as .rda files containing data frames named expDataN (for the “normal” expression data) and expDataT (for the “tumor” expression data). In either case, both objects should have the sample names listed as the column names in the form of unique ids such as TCGA barcodes (for ease of use we used 19 character sample names, up through the “Portion” element of the barcode - see: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/#:~:text=TCGA%20barcodes%20were%20used%20to,metadata%20values%20for%20a%20sample ). The row names should contain the Ensembl IDs for each of the genes, which should all be included in the Human GENCODE v22 release (see: https://www.gencodegenes.org/human/release_22.html). For recent publication, Upper quartile normalized FPKM values were used for gene expression quantification. Below shows example gene expression datasets (e.g. expDataN, expDataT) 
+Should contain two objects with expression data for normal samples (or control group) in one, and expression data for the tumor samples (or experimental group) in the other. These objects can either be text files or as .rda files containing data frames named expDataN (for the “normal” expression data) and expDataT (for the “tumor” expression data). In either case, both objects should have the sample names listed as the column names in the form of unique ids such as TCGA barcodes (for ease of use we used 19 character sample names, up through the “Portion” element of the barcode - see: https://docs.gdc.cancer.gov/Encyclopedia/pages/TCGA_Barcode/#:~:text=TCGA%20barcodes%20were%20used%20to,metadata%20values%20for%20a%20sample). The row names should contain the Ensembl IDs for each of the genes, which should all be included in the Human GENCODE v22 release (see: https://www.gencodegenes.org/human/release_22.html). For recent publication, Upper quartile normalized FPKM values were used for gene expression quantification. Below shows example gene expression datasets (e.g. expDataN, expDataT) 
 
 ```diff
 > head(expDataN,2)
@@ -82,7 +82,7 @@ cg00000108                  NA                  NA                  NA
 
 ```
 
-DNA methylation and expression data should be matched to have same number of samples, and each id should match one sample in both datasets. 
+DNA methylation and expression data should be matched to have the same number of samples, and each id should match one sample in both datasets. 
 
 ##### Clinical Dataset:
 
@@ -119,7 +119,7 @@ chr1	827249	827622
 
 ##### Genes of interest file:
 
-For simple scatterplot functions, users have the option to include a genes of interest file to specify additional transcriptional regulators they would like to have scatterplots generated for. This file should contain "genes_of_interest" in the name (such as 'genes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list either the gene names or their ensembl IDs out in a single column, with one gene listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for genes if they do not have any links to them (so scatterplots will not be created if the genes are listed incorrectly, are not accepted human transcriptional factors, or do not have any probes linked to them). 
+For simple scatterplot functions, users have the option to include a genes of interest file to specify additional transcriptional regulators they would like to have scatterplots generated for. This file should contain "genes_of_interest" in the name (such as 'genes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list either the gene names or their ensembl IDs out in a single column, with one gene listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for genes if they do not have any links to them (scatterplots will not be created if the genes are listed incorrectly, are not accepted human transcriptional factors, or do not have any probes linked to them). 
 
 ```diff
 ENSG00000197472
@@ -132,7 +132,7 @@ ENSG00000204366
 
 ##### Probes of interest file:
 
-For makeScatter4probe function, users have the option to include a probes of interest file to specify specific probes they would like to have scatterplots generated for. This file should contain "probes_of_interest" in the name (such as 'probes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list the DNA methylation probes on the Illumina HumanMethylation450K beadchip array in a single column, with one probe listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for probes if they do not have any links to them (so scatterplots will not be created if the probes are listed incorrectly, are not included on the array, or do not have any transcriptional regulators linked to them). 
+For makeScatter4probe function, users have the option to include a probes of interest file to specify specific probes they would like to have scatterplots generated for. This file should contain "probes_of_interest" in the name (such as 'probes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list the DNA methylation probes on the Illumina HumanMethylation450K beadchip array in a single column, with one probe listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for probes if they do not have any links to them (scatterplots will not be created if the probes are listed incorrectly, are not included on the array, or do not have any transcriptional regulators linked to them). 
 
 ```diff
 cg00068377
@@ -145,17 +145,17 @@ cg22953687
 
 ## TENET 2.0 Output and recommended functions:
 
-We higly recommended to run TENET 2.0 on a high performance computing cluster as it requires large computer memory. We recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though users can choose. HypoGplus and HyperGplus analyses encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. All five steps should be run to identify key transcriptional regulators (e.g. transcription factors) and enhancers; steps 1-5 are vital for generating data, but step 5 includes optional functions (i.e. table and histogram, scatterplot, genome browser track, enhancer probe:gene link state, survival, circos, topologically associating domain (TAD) and heatmap functions). Please see Rhie et al (PMID: 27833659) and Mullen et al (In Press) to find example output figures and tables.
+We higly recommended to run TENET 2.0 on a high performance computing cluster as it requires large computer memory. We recommend running all four "quadrants" of analysis (HypoGplus, HypoGminus, HyperGplus, and HyperGminus) though users can choose. HypoGplus and HyperGplus analyses encapsulate the direct effects of potential oncogenes and tumor supressors, respectively. All five steps should be run to identify key transcriptional regulators (e.g. transcription factors) and enhancers; steps 1-5 are vital for generating data, but step 5 includes optional functions (i.e. table and histogram, scatterplot, genome browser track, enhancer probe:gene link state, survival, circos, topologically associating domain (TAD) and heatmap functions). Please see Rhie et al (PMID: 27833659) and Mullen et al (PMID: 32925947) to find example output figures and tables.
 
 ### Recommended functions:
 
-For step 5 functions, it is recommended at the moment to run the histogram, genome browser track, scatterplot, survival, circos, TAD, and heatmap functions. 
+For step 5 functions, it is recommended at the moment to run the histogram, genome browser track, states, scatterplot, survival, circos, TAD, and heatmap functions. 
 
 ##### Histogram output:
 
 Histogram functions output a variety of both .txt and .pdf files containing summarized information about the number of links to relevant transcriptional regulators. The .txt files contain the total number of relevant linked DNA methylation probes to relevant transcription factors organized from the regulators with the largest number of links to the smallest. The .pdf files take the information from the corresponding .txt files and display that information in the form of a histogram, showing a given number of links on the x-axis, and the number of regulators with that number of links on the y-axis. For complete information about all links to identified key transcriptional regulators (e.g. transcription factors), look at the 'links.all.tf.freq' list and historgram. The cis links indicate ones located in the same chromosome ('links.cis.tf.freq') and the trans links indicate ones located in the different chromosomes ('links.trans.tf.freq').
 
-This function is a prerequisite for several other important TENET functions in the step 5 analyses including the survival, circos, TAD, and heatmap functions. 
+This function is a prerequisite for several other important TENET functions in the step 5 analyses including the enome browser track, states, scatterplot, survival, circos, TAD, and heatmap functions. 
 
 ```diff
 gene.nameID	Freq	geneSymbol	geneID
@@ -236,8 +236,8 @@ TAD functions output .tsv files that contain TAD information for all unique DNA 
 
 ```diff
 probe_ID      seqnames  start     end       CENPA_linked FOXM1_linked  TCF24_linked MYBL2_linked  SOX2_linked  GM12878_Rao_2014.raw_TADs_gene_count_in_TAD  GM12878_Rao_2014.raw_TADs_TAD_gene_ENSGs 
- cg00272484     chr8 142319159 142319160         TRUE         TRUE         FALSE       TRUE        FALSE       ENSG00000226807,ENSG00000226490,ENSG00000221123,ENSG00000254183,ENSG00000261710,ENSG00000265247,ENSG00000254008,ENSG00000171045,ENSG00000253602,ENSG00000261693,ENSG00000181790,ENSG00000232722         MROH5,AC138647.1,AC104417.1,RP11-953B20.2,RP11-953B20.1,MIR4472-1,LINC00051,TSNARE1,Metazoa_SRP,RP13-467H17.1,BAI1,MROH4P
- cg00389036     chr6 170094374 170094375         TRUE        FALSE         FALSE       FALSE       FALSE       ENSG00000236173,ENSG00000232197,ENSG00000273100,ENSG00000218716,ENSG00000230960,ENSG00000271820,ENSG00000227508,ENSG00000198719,ENSG00000112584,ENSG00000271234,ENSG00000266245,ENSG00000261003,ENSG00000008018,ENSG00000112592,ENSG00000071994,ENSG00000217874         RP1-182D15.2,RP11-302L19.1,RP11-302L19.3,RPL12P23,RP5-1086L22.1,RP5-894D12.5,FLJ38122,DLL1,FAM120B,RP5-894D12.4,MIR4644,RP1-140C12.2,PSMB1,TBP,PDCD2,OR4F7P
+cg00272484     chr8 142319159 142319160         TRUE         TRUE         FALSE       TRUE        FALSE       ENSG00000226807,ENSG00000226490,ENSG00000221123,ENSG00000254183,ENSG00000261710,ENSG00000265247,ENSG00000254008,ENSG00000171045,ENSG00000253602,ENSG00000261693,ENSG00000181790,ENSG00000232722         MROH5,AC138647.1,AC104417.1,RP11-953B20.2,RP11-953B20.1,MIR4472-1,LINC00051,TSNARE1,Metazoa_SRP,RP13-467H17.1,BAI1,MROH4P
+cg00389036     chr6 170094374 170094375         TRUE        FALSE         FALSE       FALSE       FALSE       ENSG00000236173,ENSG00000232197,ENSG00000273100,ENSG00000218716,ENSG00000230960,ENSG00000271820,ENSG00000227508,ENSG00000198719,ENSG00000112584,ENSG00000271234,ENSG00000266245,ENSG00000261003,ENSG00000008018,ENSG00000112592,ENSG00000071994,ENSG00000217874         RP1-182D15.2,RP11-302L19.1,RP11-302L19.3,RPL12P23,RP5-1086L22.1,RP5-894D12.5,FLJ38122,DLL1,FAM120B,RP5-894D12.4,MIR4644,RP1-140C12.2,PSMB1,TBP,PDCD2,OR4F7P
  
 ```
 ##### Heatmap output:
