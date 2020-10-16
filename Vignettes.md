@@ -234,6 +234,22 @@ Circos functions output .html files that contain circos plots demonstrating the 
 
 TAD functions output .tsv files that contain TAD information for all unique DNA methylation probes linked to the top transcriptional regulators (as specified by the user). These files note which of the top transcriptional regulators each probe is linked to, and lists out all the genes by Ensembl ID and name within the TAD files supplied by the user (in './external.data/TAD/') in a comma-delimited list (these lists can be rather long so a sample is not noted here). 
 
+```diff
+     probe_ID seqnames     start       end CENPA_linked FOXM1_linked
+ cg00272484     chr8 142319159 142319160         TRUE         TRUE
+ cg00389036     chr6 170094374 170094375         TRUE        FALSE
+   TCF24_linked MYBL2_linked SOX2_linked
+        FALSE         TRUE       FALSE
+        FALSE        FALSE       FALSE
+   GM12878_Rao_2014.raw_TADs_gene_count_in_TAD
+                                          12
+                                          16
+                                                                                                                                                                                                                          GM12878_Rao_2014.raw_TADs_TAD_gene_ENSGs                                                                 ENSG00000226807,ENSG00000226490,ENSG00000221123,ENSG00000254183,ENSG00000261710,ENSG00000265247,ENSG00000254008,ENSG00000171045,ENSG00000253602,ENSG00000261693,ENSG00000181790,ENSG00000232722
+ ENSG00000236173,ENSG00000232197,ENSG00000273100,ENSG00000218716,ENSG00000230960,ENSG00000271820,ENSG00000227508,ENSG00000198719,ENSG00000112584,ENSG00000271234,ENSG00000266245,ENSG00000261003,ENSG00000008018,ENSG00000112592,ENSG00000071994,ENSG00000217874
+                                                                                                                      GM12878_Rao_2014.raw_TADs_TAD_gene_names
+                                   MROH5,AC138647.1,AC104417.1,RP11-953B20.2,RP11-953B20.1,MIR4472-1,LINC00051,TSNARE1,Metazoa_SRP,RP13-467H17.1,BAI1,MROH4P
+ RP1-182D15.2,RP11-302L19.1,RP11-302L19.3,RPL12P23,RP5-1086L22.1,RP5-894D12.5,FLJ38122,DLL1,FAM120B,RP5-894D12.4,MIR4644,RP1-140C12.2,PSMB1,TBP,PDCD2,OR4F7P
+```
 ##### Heatmap output:
 
 Heatmap functions output .pdf files displaying a heatmap with samples in the columns and each unique DNA methylation probes linked to the top transcriptional regulators (as specified by the user). Above the heatmap bars displaying relative expression of each of top transcriptional regulator genes (as specified by the user) are shown (scaled using the function: [X - Xmin] /[Xmax - Xmin], with 0 expression values set to the minimum, non-zero value). Heatmaps are plotted using the heatmap.3 function with euclidean distance and Ward.D2 function for clustering. 
