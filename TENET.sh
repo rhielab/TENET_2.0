@@ -521,35 +521,35 @@ then echo "hyperGneg states of samples are annotated";\
 fi\
 cd ..\
 fi\
-makeScatter4probe=$(head -n 104 ../settings.txt | tail -n 1)\
+makeScatter4probe=$(head -n 106 ../settings.txt | tail -n 1)\
 eval $makeScatter4probe\
 if [[ $makeScatter4probe == "T" ]];\
 then\
 Rscript ../scripts/step5/make.simple.scatterplots.select.probe.R\
 fi\
 # Survival Analysis #\
-hypoGposSurvival=$(head -n 107 ../settings.txt | tail -n 1)\
+hypoGposSurvival=$(head -n 109 ../settings.txt | tail -n 1)\
 eval $hypoGposSurvival\
 if [[ $hypoGposSurvival == "T" ]];\
 then\
 mkdir "hypo.G+.output.survival"\
 Rscript ../scripts/step5/make.survival.plots.hypometh.G+.R\
 fi\
-hypoGnegSurvival=$(head -n 108 ../settings.txt | tail -n 1)\
+hypoGnegSurvival=$(head -n 110 ../settings.txt | tail -n 1)\
 eval $hypoGnegSurvival\
 if [[ $hypoGnegSurvival == "T" ]];\
 then\
 mkdir "hypo.G-.output.survival"\
 Rscript ../scripts/step5/make.survival.plots.hypometh.G-.R\
 fi\
-hyperGposSurvival=$(head -n 109 ../settings.txt | tail -n 1)\
+hyperGposSurvival=$(head -n 111 ../settings.txt | tail -n 1)\
 eval $hyperGposSurvival\
 if [[ $hyperGposSurvival == "T" ]];\
 then\
 mkdir "hyper.G+.output.survival"\
 Rscript ../scripts/step5/make.survival.plots.hypermeth.G+.R\
 fi\
-hyperGnegSurvival=$(head -n 110 ../settings.txt | tail -n 1)\
+hyperGnegSurvival=$(head -n 112 ../settings.txt | tail -n 1)\
 eval $hyperGnegSurvival\
 if [[ $hyperGnegSurvival == "T" ]];\
 then\
@@ -557,28 +557,28 @@ mkdir "hyper.G-.output.survival"\
 Rscript ../scripts/step5/make.survival.plots.hypermeth.G-.R\
 fi\
 # circos plots #\
-hypoGposCircos=$(head -n 119 ../settings.txt | tail -n 1)\
+hypoGposCircos=$(head -n 121 ../settings.txt | tail -n 1)\
 eval $hypoGposCircos\
 if [[ $hypoGposCircos == "T" ]];\
 then\
 mkdir "hypo.G+.output.circos"\
 Rscript ../scripts/step5/make.circos.plots.hypometh.G+.R\
 fi\
-hypoGnegCircos=$(head -n 120 ../settings.txt | tail -n 1)\
+hypoGnegCircos=$(head -n 122 ../settings.txt | tail -n 1)\
 eval $hypoGnegCircos\
 if [[ $hypoGnegCircos == "T" ]];\
 then\
 mkdir "hypo.G-.output.circos"\
 Rscript ../scripts/step5/make.circos.plots.hypometh.G-.R\
 fi\
-hyperGposCircos=$(head -n 121 ../settings.txt | tail -n 1)\
+hyperGposCircos=$(head -n 123 ../settings.txt | tail -n 1)\
 eval $hyperGposCircos\
 if [[ $hyperGposCircos == "T" ]];\
 then\
 mkdir "hyper.G+.output.circos"\
 Rscript ../scripts/step5/make.circos.plots.hypermeth.G+.R\
 fi\
-hyperGnegCircos=$(head -n 122 ../settings.txt | tail -n 1)\
+hyperGnegCircos=$(head -n 124 ../settings.txt | tail -n 1)\
 eval $hyperGnegCircos\
 if [[ $hyperGnegCircos == "T" ]];\
 then\
@@ -586,28 +586,28 @@ mkdir "hyper.G-.output.circos"\
 Rscript ../scripts/step5/make.circos.plots.hypermeth.G-.R\
 fi\
 # TAD analysis #\
-hypoGposTAD=$(head -n 127 ../settings.txt | tail -n 1)\
+hypoGposTAD=$(head -n 129 ../settings.txt | tail -n 1)\
 eval $hypoGposTAD\
 if [[ $hypoGposTAD == "T" ]];\
 then\
 mkdir "hypo.G+.output.TAD"\
 Rscript ../scripts/step5/make.TAD.tables.hypometh.G+.R\
 fi\
-hypoGnegTAD=$(head -n 128 ../settings.txt | tail -n 1)\
+hypoGnegTAD=$(head -n 130 ../settings.txt | tail -n 1)\
 eval $hypoGnegTAD\
 if [[ $hypoGnegTAD == "T" ]];\
 then\
 mkdir "hypo.G-.output.TAD"\
 Rscript ../scripts/step5/make.TAD.tables.hypometh.G-.R\
 fi\
-hyperGposTAD=$(head -n 129 ../settings.txt | tail -n 1)\
+hyperGposTAD=$(head -n 131 ../settings.txt | tail -n 1)\
 eval $hyperGposTAD\
 if [[ $hyperGposTAD == "T" ]];\
 then\
 mkdir "hyper.G+.output.TAD"\
 Rscript ../scripts/step5/make.TAD.tables.hypermeth.G+.R\
 fi\
-hyperGnegTAD=$(head -n 130 ../settings.txt | tail -n 1)\
+hyperGnegTAD=$(head -n 132 ../settings.txt | tail -n 1)\
 eval $hyperGnegTAD\
 if [[ $hyperGnegTAD == "T" ]];\
 then\
@@ -615,28 +615,28 @@ mkdir "hyper.G-.output.TAD"\
 Rscript ../scripts/step5/make.TAD.tables.hypermeth.G-.R\
 fi\
 # Methylation heat map analysis #\
-hypoGposMetHeatmap=$(head -n 135 ../settings.txt | tail -n 1)\
+hypoGposMetHeatmap=$(head -n 137 ../settings.txt | tail -n 1)\
 eval $hypoGposMetHeatmap\
 if [[ $hypoGposMetHeatmap == "T" ]];\
 then\
 mkdir "hypo.G+.output.probe.heatmap"\
 Rscript ../scripts/step5/make.met.heatmap.hypometh.G+.R\
 fi\
-hypoGnegMetHeatmap=$(head -n 136 ../settings.txt | tail -n 1)\
+hypoGnegMetHeatmap=$(head -n 138 ../settings.txt | tail -n 1)\
 eval $hypoGnegMetHeatmap\
 if [[ $hypoGnegMetHeatmap == "T" ]];\
 then\
 mkdir "hypo.G-.output.probe.heatmap"\
 Rscript ../scripts/step5/make.met.heatmap.hypometh.G-.R\
 fi\
-hyperGposMetHeatmap=$(head -n 137 ../settings.txt | tail -n 1)\
+hyperGposMetHeatmap=$(head -n 139 ../settings.txt | tail -n 1)\
 eval $hyperGposMetHeatmap\
 if [[ $hyperGposMetHeatmap == "T" ]];\
 then\
 mkdir "hyper.G+.output.probe.heatmap"\
 Rscript ../scripts/step5/make.met.heatmap.hypermeth.G+.R\
 fi\
-hyperGnegMetHeatmap=$(head -n 138 ../settings.txt | tail -n 1)\
+hyperGnegMetHeatmap=$(head -n 140 ../settings.txt | tail -n 1)\
 eval $hyperGnegMetHeatmap\
 if [[ $hyperGnegMetHeatmap == "T" ]];\
 then\
