@@ -1,6 +1,7 @@
 load("../settings.rda")
-##### let's obtain methylation and expression data if step1 was not performed #####
-load(paste("../step1/output/", prefix, ".diff.methylated.datasets.rda", sep=""))
+## Get the rda file with expression and methylation data:
+combined_rda_file <- list.files(path='../external.data/data',pattern='\\.rda$',full.names= TRUE,include.dirs = TRUE)
+## Load the RDA files
 library(ggplot2)
 DichF=data.frame(group=c(colnames(metDataT), colnames(metDataN)), cluster=c(rep("red", dim(metDataT)[2]), rep("blue", dim(metDataN)[2])))
 metDataF_subC=cbind(metDataT, metDataN)
@@ -9,6 +10,8 @@ LS=list.files("../step4/hypo.G-.output/", pattern="all.optimized.links.txt")
 TESTSR=read.delim(paste("../step4/hypo.G-.output/", LS[1], sep=""), header=T)
 LM=list.files("../external.data/otherinfo", "SM")
 SM=read.delim(paste("../external.data/otherinfo/", LM[1], sep=""), header=T, sep="\t")
+ordered_TFs_by_link_count <- read.delim(file=paste("./hypo.G-.output.histogram/",prefix,".hypo.G-.links.all.tf.freq.txt",sep=''),stringsAsFactors = FALSE)
+TESTSR=TESTSR[which(TESTSR$geneID %in% ordered_TFs_by_link_count$geneID[1:complexscatterplot_top_n_genes]),]
 dir.create("hypo.G-.output.complex.scatterplot")
 setwd("./hypo.G-.output.complex.scatterplot")
 SM=t(SM)
@@ -32,8 +35,7 @@ SM.sh2[which(SM.sh==0)]=paste(16)
 SM.sh2[which(SM.sh==1)]=paste(8)
 CNV.sh2[which(SM.sh2==8)]=paste(8)
 }
-p=ggplot(DATA_i, aes(x=DATA_i[,1], y=DATA_i[,2]))+scale_shape_identity()+geom_point(colour=as.character(DATA_i$colour), size=3, shape=as.numeric(CNV.sh2))+xlab(paste("DNA methylation level (", names(DATA_i)[1], ")", sep=""))+ylab(paste("Gene expression level (", TESTSR[i,2], ", ID=",TESTSR[i,3],")", sep=""))+xlim(0,1)+theme_bw()+ggtitle(paste("Scatterplot for ", TESTSR[i,1],":", TESTSR[i,2], " (Pe=", signif(TESTSR[i,5],2), ", cor=",signif(cor(DATA_i[,1], DATA_i[,2], use="complete.obs", method="spearman"),2), ")", sep=""))
+p=ggplot(DATA_i, aes(x=DATA_i[,2], y=DATA_i[,1]))+scale_shape_identity()+geom_point(colour=as.character(DATA_i$colour), size=3, shape=as.numeric(CNV.sh2))+xylab(paste(names(DATA_i)[1], "DNA methylation", sep=" "))+xlab(paste(TESTSR[i,2], "gene expression level", sep=" "))+ylim(0,1)+theme_bw()+ggtitle(paste("Complex Scatterplot for ", TESTSR[i,2], ":", TESTSR[i,1],sep=" "))
 ggsave(p, filename=paste(prefix, TESTSR[i,1], TESTSR[i,2], TESTSR[i,3], "anno.scatterplots.pdf", sep="."),  useDingbats=FALSE)
-print(i)
 }
 setwd("../")
