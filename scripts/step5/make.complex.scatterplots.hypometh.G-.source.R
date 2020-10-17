@@ -15,7 +15,7 @@ LM=list.files("../external.data/otherinfo", "SM")
 SM=read.delim(paste("../external.data/otherinfo/", LM[1], sep=""), header=T, sep="\t")
 LP=list.files("../external.data/otherinfo", "Purity")
 Pur=read.delim(paste("../external.data/otherinfo/", LP[1], sep=""), header=T, sep="\t")
-ordered_TFs_by_link_count <- read.delim(file=paste("./hypo.G+.output.histogram/",prefix,".hypo.G+.links.all.tf.freq.txt",sep=''),stringsAsFactors = FALSE)
+ordered_TFs_by_link_count <- read.delim(file=paste("./hypo.G-.output.histogram/",prefix,".hypo.G-.links.all.tf.freq.txt",sep=''),stringsAsFactors = FALSE)
 TESTSR=TESTSR[which(TESTSR$geneID %in% ordered_TFs_by_link_count$geneID[1:complexscatterplot_top_n_genes]),]
 dir.create("hypo.G-.output.complex.scatterplot")
 setwd("./hypo.G-.output.complex.scatterplot")
