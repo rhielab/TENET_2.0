@@ -2,6 +2,7 @@ load("../settings.rda")
 ## Get the rda file with expression and methylation data:
 combined_rda_file <- list.files(path='../external.data/data',pattern='\\.rda$',full.names= TRUE,include.dirs = TRUE)
 ## Load the RDA files
+load(combined_rda_file)
 library(ggplot2)
 DichF=data.frame(group=c(colnames(metDataT), colnames(metDataN)), cluster=c(rep("red", dim(metDataT)[2]), rep("blue", dim(metDataN)[2])))
 metDataF_subC=cbind(metDataT, metDataN)
