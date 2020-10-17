@@ -302,7 +302,7 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	F: top transcriptional regulators and negatively-linked hypermethylated enhancers or those specified by the user
 	
 ###### scatterplot_top_n_genes
-	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create scatterplots plots for the top n transcriptional regulators to linked probes. 
+	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create scatterplots for the top n transcriptional regulators to linked probes. 
 
 ###### hypoGposTracks
 	T: Make UCSC genome browser tracks for (number specified by the track_top_n_genes parameter) transcriptional regulators and their linked hypomethylated enhancers (hypoGpos)
@@ -347,6 +347,9 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	
 	F: Don't generate the activity status table for top transcriptional regulators and their negatively-linked hypermethylated enhancers
 
+###### states_top_n_genes
+	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create the states table for the top n transcriptional regulators to linked probes.
+	
 ###### hypoGposCScatter
 	T: Make complex scatterplots for hypomethylated enhancers to genes positively linked (hypoGpos) using files in ./external.data/otherinfo (Purity, CNV, SM datasets)
 
@@ -367,9 +370,12 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	
 	F: Don't generate complex scatterplots for hyperGneg
 
+###### complexscatterplot_top_n_genes
+	Parameter sets the top n transcription factors (by number of linked/negatively-linked enhancer probes of the specified type) to create complex scatterplots (Purity, CNV, SM datasets) for the top n transcriptional regulators to linked probes. 
+	
 ###### makeScatter4probe
 	T: Make simple scatterplots for the enhancer probes users have selected and listed in a file containing the name 'probes_of_interest' placed in ./external.data/otherinfo/ 
-	
+
 	F: Don't generate simple scatterplots for the probes specified by the user in ./external.data/otherinfo
 
 ###### hypoGposSurvival
