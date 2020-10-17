@@ -61,7 +61,7 @@ Zcutoff=0.05
 permutation.cutoff=0.05
 adj.pval.cutoff=0.05
 
-## step5 all at once functions ##
+## step5 functions ##
 
 # table and histogram 
 hypoGposHistogram=T
@@ -94,7 +94,7 @@ hyperGnegStates=F
 
 states_top_n_genes=5
 
-# complex scatterplot
+# complex scatterplot *rebuilt*
 hypoGposCScatter=F
 hypoGnegCScatter=F
 hyperGposCScatter=F
@@ -102,7 +102,7 @@ hyperGnegCScatter=F
 
 complexscatterplot_top_n_genes=5
 
-## step5 specific dataset functions ##
+# specific probe scatterplot
 makeScatter4probe=F
 
 # survival *NEW*
