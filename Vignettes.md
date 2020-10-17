@@ -119,7 +119,7 @@ chr1	827249	827622
 
 ##### Genes of interest file:
 
-For simple scatterplot functions, users have the option to include a genes of interest file to specify additional transcriptional regulators they would like to have scatterplots generated for. This file should contain "genes_of_interest" in the name (such as 'genes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list either the gene names or their ensembl IDs out in a single column, with one gene listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for genes if they do not have any links to them (scatterplots will not be created if the genes are listed incorrectly, are not accepted human transcriptional factors, or do not have any probes linked to them). 
+For simple scatterplot functions, users have the option to include a genes of interest file to specify additional transcriptional regulators they would like to have scatterplots generated for. This file should contain "genes_of_interest" in the filename (such as 'genes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list either the gene names or their ensembl IDs out in a single column, with one gene listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for genes if they do not have any links to them (scatterplots will not be created if the genes are listed incorrectly, are not accepted human transcriptional factors, or do not have any probes linked to them). 
 
 ```diff
 ENSG00000197472
@@ -132,7 +132,7 @@ ENSG00000204366
 
 ##### Probes of interest file:
 
-For makeScatter4probe function, users have the option to include a probes of interest file to specify specific probes they would like to have scatterplots generated for. This file should contain "probes_of_interest" in the name (such as 'probes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list the DNA methylation probes on the Illumina HumanMethylation450K beadchip array in a single column, with one probe listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for probes if they do not have any links to them (scatterplots will not be created if the probes are listed incorrectly, are not included on the array, or do not have any transcriptional regulators linked to them). 
+For makeScatter4probe function, users have the option to include a probes of interest file to specify specific probes they would like to have scatterplots generated for. This file should contain "probes_of_interest" in the filename (such as 'probes_of_interest.txt'), and should be deposited in './external.data/otherinfo/'. This file should list the DNA methylation probes on the Illumina HumanMethylation450K beadchip array in a single column, with one probe listed per line, and without a header. Note that current functionality of the scatterplot functions will not create plots for probes if they do not have any links to them (scatterplots will not be created if the probes are listed incorrectly, are not included on the array, or do not have any transcriptional regulators linked to them). 
 
 ```diff
 cg00068377
@@ -140,6 +140,43 @@ cg02202315
 cg04855678
 cg13873387
 cg22953687
+
+```
+
+##### Copy Number Variation file:
+
+For complex scatterplot function, users have the option to include copy number variation (CNV) called file to generated scatterplots with CNV annotation. This file should contain "CNV" in the filename (such as 'CNV.txt'), and should be deposited in './external.data/otherinfo/'. This file should include colnames as sample IDs that matched to above DNA methylation and gene expression datasets for tumor samples (case group) and rownames as gene names with CNV calls. CNV call should have deletion as negative value, amplification as positive value and no change as 0. An example CNV.txt file is shown here
+
+```diff
+       TCGA-YL-A8SQ-01 TCGA-YL-A8SR-01 TCGA-YL-A9WH-01 TCGA-YL-A9WI-01
+ACAP3               -1               0              -1               0
+ACTRT2              -1               0              -1               0
+
+```
+
+##### Somatic Mutation file: 
+
+For complex scatterplot function, users have the option to include somatic mutation (SM) called file to generated scatterplots with SM annotation. This file should contain "SM" in the filename (such as 'SM.txt'), and should be deposited in './external.data/otherinfo/'. This file should include colnames as sample IDs that matched to above DNA methylation and gene expression datasets for tumor samples (case group) and rownames as gene names with SM calls. Samples that have somatic mutation should be indicated as 1, and samples without mutation should be indicated as 0. An example SM.txt file is shown here
+
+```diff
+     TCGA-J4-A83N-01 TCGA-J9-A52B-01 TCGA-J9-A8CK-01 TCGA-J9-A8CL-01
+TTN                0               0               0               1
+TP53               0               1               1               0
+
+```
+
+##### Purity file:
+
+For complex scatterplot function, users have the option to include sample purity file to generated scatterplots with purity annotation. This file should contain "Purity" in the filename (such as 'Purity.txt'), and should be deposited in './external.data/otherinfo/'. This file should include colnames, ID and purity, and rownames, sample IDs that matched to above DNA methylation and gene expression datasets for tumor samples (case group). Purity value should be indicated from 0 to 1. An example Purity.txt file is shown here
+
+```diff
+             ID  purity
+TCGA-2A-A8VL-01  0.510
+TCGA-2A-A8VO-01  0.560
+TCGA-2A-A8VT-01  0.725
+TCGA-2A-A8VV-01  0.835
+TCGA-2A-A8W1-01  0.945
+TCGA-2A-A8W3-01  0.455
 
 ```
 
@@ -205,6 +242,13 @@ Scatterplot functions output .pdf files with scatterplots displaying the express
 ##### MakeScatter4probe
 
 This function is optional if the user has enhancer probes of particular interest and has supplied them in the Probes of interest (see above). Like the simple scatterplot functions, this function outputs .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). See above for example of output for this function. 
+
+##### Complex scatterplot output:
+
+Complex Scatterplot output .pdf files with scatterplots displaying the expression of transcriptional regulators on the x-axis, and the methylation of all their linked DNA methylation probes on the y-axis. Individual points are colored red (for tumor samples) or blue (for normal samples). Scatterplots can be generated for the top n transcriptional regulators (as specified by the user), as well as user input genes as specified by the genes of interest file (see above). 
+
+
+<img src="https://github.com/suhnrhie/TENET_2.0/blob/master/example_images/complexscatterplot_example.png" alt="Example complex scatterplot output" width="504"/> 
 
 ##### Survival output:
 
