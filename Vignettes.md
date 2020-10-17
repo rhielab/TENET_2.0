@@ -167,7 +167,7 @@ TP53               0               1               1               0
 
 ##### Purity file:
 
-For complex scatterplot function, users have the option to include sample purity file to generated scatterplots with purity annotation. This file should contain "Purity" in the filename (such as 'Purity.txt'), and should be deposited in './external.data/otherinfo/'. This file should include colnames, ID and purity, and rownames, sample IDs that matched to above DNA methylation and gene expression datasets for tumor samples (case group). Purity value should be indicated from 0 to 1. An example Purity.txt file is shown here
+For complex scatterplot function, users have the option to include sample purity file to generated scatterplots with purity (e.g. tumor purity estimates comparing with normal molecular signatures) annotation. This file should contain "Purity" in the filename (such as 'Purity.txt'), and should be deposited in './external.data/otherinfo/'. This file should include colnames, ID and purity, and rownames, sample IDs that matched to above DNA methylation and gene expression datasets for tumor samples (case group). Purity value should be indicated from 0 to 1. An example Purity.txt file is shown here
 
 ```diff
              ID  purity
