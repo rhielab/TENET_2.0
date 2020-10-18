@@ -199,12 +199,12 @@ you can put a txt file in ./external.data/othercells or put a rda file in ./exte
 	F: Don't use external datasets for other peaks
 
 ###### SMdataset
-	T: Use somatic mutation datasets purity user has loaded in ./external.data/otherinfo to make complex scatterplots
+	T: Use somatic mutation datasets user has loaded in ./external.data/otherinfo to make complex scatterplots
 	
 	F: Don't use SMdatasets
 
 ###### CNVdataset
-	T: Use copy number variation datasets purity user has loaded in ./external.data/otherinfo to make complex scatterplots
+	T: Use copy number variation datasets user has loaded in ./external.data/otherinfo to make complex scatterplots
 	
 	F: Don't use CNVdatasets
 
