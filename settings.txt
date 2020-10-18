@@ -78,6 +78,17 @@ hyperGnegScatter=F
 
 scatterplot_top_n_genes=5
 
+# complex scatterplot *rebuilt*
+hypoGposCScatter=F
+hypoGnegCScatter=F
+hyperGposCScatter=F
+hyperGnegCScatter=F
+
+complexscatterplot_top_n_genes=5
+
+# specific probe scatterplot
+makeScatter4probe=F
+
 # genome browser track *rebuilt*
 hypoGposTracks=F
 hypoGnegTracks=F
@@ -93,17 +104,6 @@ hyperGposStates=F
 hyperGnegStates=F
 
 states_top_n_genes=5
-
-# complex scatterplot *rebuilt*
-hypoGposCScatter=F
-hypoGnegCScatter=F
-hyperGposCScatter=F
-hyperGnegCScatter=F
-
-complexscatterplot_top_n_genes=5
-
-# specific probe scatterplot
-makeScatter4probe=F
 
 # survival *NEW*
 hypoGposSurvival=T
