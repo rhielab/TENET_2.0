@@ -67,7 +67,7 @@ TENET 2.0 also makes use of enhancer probes from v1.5.1 of the ELMER package
 
 ###### A. Get methylation and gene expression data with matched sample IDs
 
-You can either put txt files in ./external.data/data/methylation and ./external.data/data/expression (add case and ctrl in the file name, respectively) or put a rda file in ./external.data/data (for case, name as "metDataT", "expDataT", for ctrl, name as "metDataN", "expDataN")
+You can either put txt files in ./external.data/data/methylation and ./external.data/data/expression (add case and ctrl in the file name, respectively) or put a rda file in ./external.data/data (for case, name as "metDataT", "expDataT", for ctrl, name as "metDataN", "expDataN"). .rda file can also include a "clinical" object with TCGA clinical data (for use in step5 survival functions). Matching sample names with at least 12 characters (i.e. TCGA-##-####) should be included in the columns of the expData and metData objects, while the GENCODE v22 Ensembl gene IDs (i.e. ENSG###########) or HM450 probe IDs (i.e. cg########) should be contained in the rows of the expData and metData objects, respectively. 
 
 ###### B. Fill out parameter settings in settings.txt 
 
@@ -79,15 +79,15 @@ bash ./TENET.sh
 (OPTIONAL 1) put other cells methylation data you want to use for purity adjustment
 you can put a txt file in ./external.data/othercells or put a rda file in ./external.data/others (name as "extData")
 
-(OPTIONAL 2) if you have external datasets for enhancer peaks (bedfile), add files in ./external.data/enhancer
+(OPTIONAL 2) if you have external datasets for enhancer peaks (must be in bed-like format and end with '.bed'), add files in ./external.data/enhancer
 
-(OPTIONAL 3) if you have external datasets for NDR peaks (bedfile), add files in ./external.data/NDR
+(OPTIONAL 3) if you have external datasets for NDR peaks (must be in bed-like format and end with '.bed'), add files in ./external.data/NDR
 
-(OPTIONAL 4) if you have external datasets for other peaks (bed file), add files in ./external.data/feature
+(OPTIONAL 4) if you have external datasets for other peaks (must be in bed-like format and end with '.bed'), add files in ./external.data/feature
 
 (OPTIONAL 5) if you have Purity, CNV, SM datasets for sample samples, add files in ./external.data/otherinfo (include "CNV", "SM", "Purity" in the file names)
 
-(OPTIONAL 6) if you have TAD file info (in bed-like format), add files in ./external.data/TAD
+(OPTIONAL 6) if you have TAD file info (must be in bed-like format and can't end with '.rtf'), add files in ./external.data/TAD
 
 ## 3. TENET 2.0 Parameters
 
