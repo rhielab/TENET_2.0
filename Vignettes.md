@@ -156,12 +156,12 @@ ACTRT2              -1               0              -1               0
 
 ##### Somatic Mutation file: 
 
-For complex scatterplot function, users have the option to include a somatic mutations (SM) called file to generate scatterplots with SM annotations. This file should contain "SM" in the filename (such as 'SM.txt'), and should be deposited in './external.data/otherinfo/'. This file should include as colnames the sample IDs that matched to above DNA methylation and gene expression datasets for tumor samples (case group) and as rownames the gene names with SM calls. Samples that have somatic mutation should be indicated as 1, and samples without mutation should be indicated as 0. An example SM.txt file is shown here
+For complex scatterplot function, users have the option to include a somatic mutations (SM) called file to generate scatterplots with SM annotations. This file should contain "SM" in the filename (such as 'SM.txt'), and should be deposited in './external.data/otherinfo/'. This file should include as rownames the sample IDs that matched to above DNA methylation and gene expression datasets for tumor samples (case group) and as colnames the gene names with SM calls. Samples that have somatic mutation should be indicated as 1, and samples without mutation should be indicated as 0. An example SM.txt file is shown here
 
 ```diff
-     TCGA-J4-A83N-01 TCGA-J9-A52B-01 TCGA-J9-A8CK-01 TCGA-J9-A8CL-01
-TTN                0               0               0               1
-TP53               0               1               1               0
+                SPOP MUC16 BAGE2 MUC17 RYR2 OBSCN SYNE1 ATM HMCN1 FOXA1 LRP1B
+TCGA-ZG-A8QY-01    1     0     0     1    0     0     0   0     0     0     0
+TCGA-ZG-A8QZ-01    0     0     0     0    0     0     0   0     0     0     0
 
 ```
 
