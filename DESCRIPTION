@@ -1,4 +1,4 @@
-Package: tenet.skeleton
+Package: TENET
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
@@ -21,3 +21,7 @@ Imports:
     matlab,
     BioCircos,
     GenomicRanges
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
