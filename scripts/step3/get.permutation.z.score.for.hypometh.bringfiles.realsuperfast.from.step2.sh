@@ -51,10 +51,12 @@ actual_unique_cgs=($(echo "${placeholder_cg_array[@]}" | tr ' ' '\n' | sort -u |
 actual_unique_cg_count=(${#actual_unique_cgs[@]})
 
 ## Split the .rda.sorted.txt file into individual files starting with 'HYPO_GENE' 
-split -d -l ${hypo_probes} -a ${#gene_count} --additional-suffix=.txt ${HYPO_ORIGINAL_SUBSET_FILE} HYPO_GENE
+split -d -l ${actual_unique_cg_count} -a ${#gene_count} --additional-suffix=.txt ${HYPO_ORIGINAL_SUBSET_FILE} HYPO_GENE
 
 ## Read in an array of all the HYPO_GENE file names:
-current_file_names_complete=($(ls -d HYPO_GENE*))
+# current_file_names_complete=($(ls -d HYPO_GENE*))
+
+current_file_names_complete=($(echo HYPO_GENE* | xargs ls))
 
 ## Get just the split file names: 
 current_file_names=("${current_file_names_complete[@]##*/}")

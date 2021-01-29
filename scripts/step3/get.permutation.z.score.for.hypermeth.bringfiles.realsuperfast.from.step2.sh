@@ -57,7 +57,9 @@ split -d -l ${actual_unique_cg_count} -a ${#gene_count} --additional-suffix=.txt
 current_file_names_complete=($(ls -d HYPER_GENE*))
 
 ## Get just the split file names: 
-current_file_names=("${current_file_names_complete[@]##*/}")
+# current_file_names=("${current_file_names_complete[@]##*/}")
+
+current_file_names_complete=($(echo HYPO_GENE* | xargs ls))
 
 ## Create a vector that contains the names we want to rename the files to:
 new_file_names=("${gene_name_array[@]/%/.hyper.zscore.dataframe.fin.txt}")
