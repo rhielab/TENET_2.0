@@ -1277,7 +1277,7 @@ top_gene_assignment_function <- function(probe_of_interest){
     'geneSymbol'
     ]
 
-  ## Conver thte top X genes to their gene symbols
+  ## Convert the top X genes to their gene symbols
   top_gene_symbols <- gencode_v22_genes_df[
     top_gene_names, 'gene_name'
     ]
