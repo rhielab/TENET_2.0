@@ -1,0 +1,1 @@
+This is the data to store .bed-like files containing TAD information for TAD analysis. Files should have at least 3 columns, with the first three columns containing chromosome, start, and end location for TADs, respectively (remaining columns will be ignored). Information in the TAD tables will be named based off of TAD file names.

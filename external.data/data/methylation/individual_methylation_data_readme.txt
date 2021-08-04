@@ -1,0 +1,1 @@
+This is the folder to hold methylation data as individual file(s). Data will need to be loaded in the form of .txt files with the sample barcodes included in the column names and the probe cg IDs in the rows.

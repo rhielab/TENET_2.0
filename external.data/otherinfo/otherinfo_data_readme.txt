@@ -1,0 +1,1 @@
+This is the data to store information about relevant data for other relevant info (of any sort?) for the TENET study of interest. Data should be input in the form of tab-delimited .bed files (see ENCODE guidelines), but should absolutely include information regarding peak chromosome, start, and end files. For maximal accuracy, remember .bed files should be 0-indexed.

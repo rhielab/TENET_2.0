@@ -1,0 +1,1 @@
+This is the folder to hold expression data as individual file(s). Data will need to be loaded in the form of .txt file(s) with the sample barcodes included in the column names and the gene ENSG IDs in the rows.
