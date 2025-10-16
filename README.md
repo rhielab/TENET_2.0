@@ -1,4 +1,6 @@
-# TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
+# This is an old version of TENET that predates the Bioconductor release. See [here](https://github.com/rhielab/TENET) for the current version.
+
+## TENET (Tracing Enhancer Networks using Epigenetic Traits) 2.0
 
 #### Last updated: 7/18/2021
 
